@@ -1,9 +1,15 @@
 import React from 'react';
+import Header from './components/Header'
+import Board from './components/Board'
+import { BrowserRouter as Router } from 'react-router-dom'
 import './App.css';
 
 function App() {
   return (
-    <h1>SCHMOOD</h1>
+    <Router>
+      <Header />
+      <Board />
+    </Router>
   );
 }
 

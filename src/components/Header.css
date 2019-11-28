@@ -1,0 +1,14 @@
+
+li {
+    display: inline;
+    float: right;
+}
+
+nav {
+    display: inline;
+}
+
+a {
+    display: block;
+    padding: 8px;
+  }
