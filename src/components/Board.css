@@ -1,5 +1,6 @@
 #mood-form {
     margin: auto;
+    width: 40%;
     text-align: center;
 }
 
@@ -8,7 +9,7 @@
     padding: 10px;
     border: none;
     border-radius: 3px;
-    width: 400px;
+    width: 100%;
 }
 
 button {

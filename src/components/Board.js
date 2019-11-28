@@ -9,8 +9,7 @@ class Board extends React.Component {
         return (
             <div id="mood-form">
                 <form>
-                    <label>Name</label>
-                    <input id='mood-name' type='text'></input>
+                    <input id='mood-name' type='text' placeholder='Mood name'></input>
                     <button>Image</button>
                     <Image />
                     <button>Write</button>
