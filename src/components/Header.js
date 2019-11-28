@@ -4,20 +4,16 @@ import './Header.css'
 class Header extends React.Component {
     render () {
         return (
-            <nav>
+            <div>
                 <p>SCHMOOD</p>
-                <ul>
-                    <li>
-                        <a href='http://www.google.com'>Home</a>
-                    </li>
-                    <li>
-                        <a>Github</a>
-                    </li>
-                    <li>
-                        <a>How to use</a>
-                    </li>
-                </ul>
-            </nav>
+                <nav>
+                    <ul>
+                        <li><a href='#'>Home</a></li>
+                        <li><a href='#'>Github</a></li>
+                        <li><a href='#'>How to use</a></li>
+                    </ul>
+                </nav>
+            </div>
         )
     }
 }
