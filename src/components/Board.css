@@ -1,7 +1,12 @@
-#mood-form {
+#mood-box {
     margin: auto;
-    width: 40%;
+    width: 50%;
     text-align: center;
+}
+
+#mood-form {
+    display: flex;
+    flex-direction: column;
 }
 
 #mood-name {
@@ -12,16 +17,29 @@
     width: 100%;
 }
 
-button {
+#add-item {
+    display: flex;
+}
+
+.add-btn {
     padding: 10px;
-    background-color: black;
+    background-color: rgb(190, 190, 190);
     color: white;
     border: none;
     border-radius: 3px;
     width: 100%;
 }
 
-button:hover {
+.add-btn:hover {
     background-color: white;
     color: black;
+}
+
+#share-btn {
+    padding: 10px;
+    background-color: tomato;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    width: 100%;
 }

@@ -7,16 +7,15 @@ import './Board.css'
 class Board extends React.Component {
     render () {
         return (
-            <div id="mood-form">
-                <form>
+            <div id="mood-box">
+                <form id="mood-form">
                     <input id='mood-name' type='text' placeholder='Mood name'></input>
-                    <button>Image</button>
-                    <Image />
-                    <button>Write</button>
-                    <Write />
-                    <button>Link</button>
-                    <Link />
-                    <button>Share</button>
+                        <div id='add-item'>
+                            <button className='add-btn'>Image</button>
+                            <button className='add-btn'>Write</button>
+                            <button className='add-btn'>Link</button>
+                        </div>
+                    <button id='share-btn'>Share</button>
                 </form>
             </div>
         )

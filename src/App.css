@@ -3,6 +3,7 @@
 }
 
 body {
+  height: 100vh;
   background-color: rgb(99, 113, 104);
-  border: tomato 5px solid;
+  border: black 1px solid;
 }
