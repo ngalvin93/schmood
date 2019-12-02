@@ -1,9 +1,4 @@
-* {
-  margin: 10px;
-}
-
 body {
   height: 100vh;
   background-color: rgb(99, 113, 104);
-  border: black 1px solid;
 }
