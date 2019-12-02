@@ -2,11 +2,15 @@ import React from 'react'
 // import Image from './Image'
 // import Write from './Write'
 // import Link from './Link'
+import Modules from './Modules'
 import { connect } from 'react-redux'
-// import store from '../store'
 import './Board.css'
 
 function Board (props) {
+  console.log('Board props:', props)
+  const ModuleMap = props.modules.map((module, idx) => (
+    <Modules key={idx} {...module} />
+  ))
   return (
     <div id='mood-box'>
       <form id='mood-form'>
@@ -15,6 +19,9 @@ function Board (props) {
           <button id="addImage" className='add-btn' onClick={ props.addImage }>Image</button>
           <button id="addWrite" className='add-btn' onClick={ props.addWrite }>Write</button>
           <button id="addLink" className='add-btn' onClick={ props.addLink }>Link</button>
+        </div>
+        <div>
+          { ModuleMap }
         </div>
         <button id='share-btn'>Share</button>
       </form>
