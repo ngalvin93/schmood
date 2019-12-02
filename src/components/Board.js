@@ -7,35 +7,19 @@ import { connect } from 'react-redux'
 import './Board.css'
 
 function Board (props) {
-  // addImage = (e) => {
-  //   e.preventDefault()
-  //   console.log('Image', e)
-  // }
-
-  // addWrite = (e) => {
-  //   e.preventDefault()
-  //   console.log('Write', e)
-  // }
-
-  // addLink = (e) => {
-  //   e.preventDefault()
-  //   console.log('Link', e)
-  // }
-
-    return (
-      <div id='mood-box'>
-        <form id='mood-form'>
-          <input id='mood-name' type='text' placeholder='Mood name'/>
-          <div id='add-item'>
-            <button id="addImage" className='add-btn' onClick={ props.addImage }>Image</button>
-            <button id="addWrite" className='add-btn' onClick={ props.addWrite }>Write</button>
-            <button id="addLink" className='add-btn' onClick={ props.addLink }>Link</button>
-          </div>
-          <button id='share-btn'>Share</button>
-        </form>
-      </div>
-    )
-  
+  return (
+    <div id='mood-box'>
+      <form id='mood-form'>
+        <input id='mood-name' type='text' placeholder='Mood name'/>
+        <div id='add-item'>
+          <button id="addImage" className='add-btn' onClick={ props.addImage }>Image</button>
+          <button id="addWrite" className='add-btn' onClick={ props.addWrite }>Write</button>
+          <button id="addLink" className='add-btn' onClick={ props.addLink }>Link</button>
+        </div>
+        <button id='share-btn'>Share</button>
+      </form>
+    </div>
+  )
 }
 
 // Connnected store

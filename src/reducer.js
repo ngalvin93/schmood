@@ -1,5 +1,5 @@
 // will be able to refactor the adding new item functions by passing in an argument in the reducer
-const addImage = () => {
+function addImage () {
   return {
     type: 1,
     imageLink: null,
@@ -8,7 +8,7 @@ const addImage = () => {
   }
 }
 
-const addWrite = () => {
+function addWrite () {
   return {
     type: 2,
     imageLink: null,
@@ -17,7 +17,7 @@ const addWrite = () => {
   }
 }
 
-const addLink = () => {
+function addLink () {
   return {
     type: 3,
     imageLink: null,
@@ -51,21 +51,19 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
   const newState = makeDeepCopy(state)
-  console.log('made a copy of the initial state in the reducer', newState)
 
   switch (action.type) {
     case 'ADD_IMAGE':
-      console.log('Added image module')
-      // set the new state equal to the amended current state
-      console.log('The resulting new state after reducer', newState)
+      newState.modules.push(addImage())
+      console.log('added new image module: ', newState)
       return newState
     case 'ADD_WRITE':
-      console.log('Added write module')
-      console.log('The resulting new state after reducer', newState)
+      newState.modules.push(addWrite())
+      console.log('added new write module: ', newState)
       return newState
     case 'ADD_LINK':
-      console.log('Added link module')
-      console.log('The resulting new state after reducer', newState)
+      newState.modules.push(addLink())
+      console.log('added new link module: ', newState)
       return newState
     default:
       return newState
