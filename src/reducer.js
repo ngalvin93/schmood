@@ -30,8 +30,8 @@ const makeDeepCopy = (obj) => {
   return JSON.parse(JSON.stringify(obj))
 }
 
-const initialState = [
-  {
+const initialState = {
+  modules: [{
     type: 1,
     imageLink: [
       'link1',
@@ -46,29 +46,26 @@ const initialState = [
     imageLink: null,
     writeString: 'I wrote a sentence.',
     webLink: null
-  }
-]
+  }]
+}
 
 const reducer = (state = initialState, action) => {
   const newState = makeDeepCopy(state)
-  console.log('NEW STATE:', newState)
+  console.log('made a copy of the initial state in the reducer', newState)
 
   switch (action.type) {
     case 'ADD_IMAGE':
       console.log('Added image module')
       // set the new state equal to the amended current state
-      newState.push(addImage)
-      console.log(newState)
+      console.log('The resulting new state after reducer', newState)
       return newState
     case 'ADD_WRITE':
       console.log('Added write module')
-      newState.push(addWrite)
-      console.log(newState)
+      console.log('The resulting new state after reducer', newState)
       return newState
     case 'ADD_LINK':
       console.log('Added link module')
-      newState.push(addLink)
-      console.log(newState)
+      console.log('The resulting new state after reducer', newState)
       return newState
     default:
       return newState
