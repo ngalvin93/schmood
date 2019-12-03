@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-class Image extends React.Component {
+
+class Image extends Component {
   render () {
     if (this.props.props.imageLink === null) {
       // return a new image module
