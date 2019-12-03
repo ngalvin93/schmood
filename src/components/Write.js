@@ -3,7 +3,11 @@ import React from 'react'
 class Write extends React.Component {
   render () {
     if (this.props.props.writeString === null) {
-      return (<p>NEW WRITE MODULE</p>)
+      return (
+        <div>
+          <input type='text' placeholder='Enter some text' />
+        </div>
+      )
     } else {
       return (
         <div>

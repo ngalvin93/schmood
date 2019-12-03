@@ -11,13 +11,13 @@ function Board (props) {
     <div id='mood-box'>
       <form id='mood-form'>
         <input id='mood-name' type='text' placeholder='Mood name'/>
+        <div>
+          { ModuleMap }
+        </div>
         <div id='add-item'>
           <button id="addImage" className='add-btn' onClick={ props.addImage }>Image</button>
           <button id="addWrite" className='add-btn' onClick={ props.addWrite }>Write</button>
           <button id="addLink" className='add-btn' onClick={ props.addLink }>Link</button>
-        </div>
-        <div>
-          { ModuleMap }
         </div>
         <button id='share-btn'>Share</button>
       </form>

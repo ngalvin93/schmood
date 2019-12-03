@@ -31,6 +31,7 @@ const makeDeepCopy = (obj) => {
 }
 
 const initialState = {
+  name: 'Honda',
   modules: [{
     type: 1,
     imageLink: [
