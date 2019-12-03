@@ -5,7 +5,7 @@ class Write extends React.Component {
     if (this.props.props.writeString === null) {
       return (
         <div>
-          <input type='text' placeholder='Enter some text' />
+          <textarea placeholder='Enter some text' />
         </div>
       )
     } else {

@@ -10,7 +10,11 @@ function Board (props) {
   return (
     <div id='mood-box'>
       <form id='mood-form'>
-        <input id='mood-name' type='text' placeholder='Mood name'/>
+        <div>
+          <label>Scmood name</label>
+          <br/>
+          <input id='mood-name' type='text'/>
+        </div>
         <div>
           { ModuleMap }
         </div>
