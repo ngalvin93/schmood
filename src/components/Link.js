@@ -3,7 +3,7 @@ import React from 'react'
 class Link extends React.Component {
   render () {
     return (
-      <p>Link module</p>
+      <p>NEW LINK MODULE</p>
     )
   }
 }

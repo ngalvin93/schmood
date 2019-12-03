@@ -1,13 +1,9 @@
 import React from 'react'
-// import Image from './Image'
-// import Write from './Write'
-// import Link from './Link'
 import Modules from './Modules'
 import { connect } from 'react-redux'
 import './Board.css'
 
 function Board (props) {
-  console.log('Board props:', props)
   const ModuleMap = props.modules.map((module, idx) => (
     <Modules key={idx} {...module} />
   ))
@@ -29,32 +25,29 @@ function Board (props) {
   )
 }
 
-// Connnected store
-
+// maps the current state to the component via props
 const mapStateToProps = (state) => {
-  console.log('mapping state to props in board component', state)
   return state
 }
 
+// this gives the component access to dispatch actions via passing as props
 const mapDispatchToProps = (dispatch) => {
   return {
     addImage: (e) => {
       e.preventDefault()
-      console.log('in the connected store....adding image')
       return dispatch({ type: 'ADD_IMAGE'})
     },
     addWrite: (e) => {
       e.preventDefault()
-      console.log('in the connected store....adding write')
       return dispatch({ type: 'ADD_WRITE'})
     },
     addLink: (e) => {
       e.preventDefault()
-      console.log('in the connected store....adding link')
       return dispatch({ type: 'ADD_LINK'})
   }
 }}
 
+// on state change, the board will refresh
 const ConnectedBoard = connect(
   mapStateToProps,
   mapDispatchToProps
