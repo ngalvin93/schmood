@@ -12,16 +12,16 @@ function Board (props) {
       <form id='mood-form'>
         <div>
           <label>Scmood name</label>
-          <br/>
-          <input id='mood-name' type='text'/>
+          <br />
+          <input id='mood-name' type='text' />
         </div>
         <div>
-          { ModuleMap }
+          {ModuleMap}
         </div>
         <div id='add-item'>
-          <button id="addImage" className='add-btn' onClick={ props.addImage }>Image</button>
-          <button id="addWrite" className='add-btn' onClick={ props.addWrite }>Write</button>
-          <button id="addLink" className='add-btn' onClick={ props.addLink }>Link</button>
+          <button id='addImage' className='add-btn' onClick={props.handleAddImage}>Image</button>
+          <button id='addWrite' className='add-btn' onClick={props.handleAddWrite}>Write</button>
+          <button id='addLink' className='add-btn' onClick={props.handleAddLink}>Link</button>
         </div>
         <button id='share-btn'>Share</button>
       </form>
@@ -37,19 +37,20 @@ const mapStateToProps = (state) => {
 // this gives the component access to dispatch actions via passing as props
 const mapDispatchToProps = (dispatch) => {
   return {
-    addImage: (e) => {
+    handleAddImage: (e) => {
       e.preventDefault()
-      return dispatch({ type: 'ADD_IMAGE'})
+      return dispatch({ type: 'ADD_IMAGE' })
     },
-    addWrite: (e) => {
+    handleAddWrite: (e) => {
       e.preventDefault()
-      return dispatch({ type: 'ADD_WRITE'})
+      return dispatch({ type: 'ADD_WRITE' })
     },
-    addLink: (e) => {
+    handleAddLink: (e) => {
       e.preventDefault()
-      return dispatch({ type: 'ADD_LINK'})
+      return dispatch({ type: 'ADD_LINK' })
+    }
   }
-}}
+}
 
 // on state change, the board will refresh
 const ConnectedBoard = connect(

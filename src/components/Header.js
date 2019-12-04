@@ -1,21 +1,40 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Header.css'
 
-class Header extends React.Component {
-  render () {
-    return (
-      <div>
-        <p>SCHMOOD</p>
-        <nav>
-          <ul>
-            <li><a href='/'>Home</a></li>
-            <li><a href='/'>Github</a></li>
-            <li><a href='/'>How to use</a></li>
-          </ul>
-        </nav>
-      </div>
-    )
-  }
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink
+} from 'reactstrap'
+
+const Header = (props) => {
+  const [isOpen, setIsOpen] = useState(false)
+  const toggle = () => setIsOpen(!isOpen)
+  return (
+    <div>
+      <Navbar color='light' light expand='md'>
+        <NavbarBrand href='/'>SCHMOOD</NavbarBrand>
+        <NavbarToggler onClick={toggle} />
+        <Collapse isOpen={isOpen} navbar>
+          <Nav className='mr-auto' navbar>
+            <NavItem>
+              <NavLink href='/'>Create Schmood</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href='/'>How to use</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href='https://github.com/ngalvin93/schmood'>Github Repo</NavLink>
+            </NavItem>
+          </Nav>
+        </Collapse>
+      </Navbar>
+    </div>
+  )
 }
 
 export default Header

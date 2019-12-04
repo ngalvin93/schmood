@@ -11,7 +11,7 @@ class Write extends React.Component {
     } else {
       return (
         <div>
-          <h1>{ this.props.props.writeString }</h1>
+          <h1>{this.props.props.writeString}</h1>
         </div>
       )
     }
