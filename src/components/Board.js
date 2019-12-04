@@ -11,9 +11,9 @@ function Board (props) {
     <div id='mood-box'>
       <form id='mood-form'>
         <div>
-          <label>Scmood name</label>
+          <label>{props.name}</label>
           <br />
-          <input id='mood-name' type='text' />
+          <input id='mood-name' type='text' name='mood-name' onChange={props.handleUpdateName} />
         </div>
         <div>
           {ModuleMap}
@@ -48,6 +48,9 @@ const mapDispatchToProps = (dispatch) => {
     handleAddLink: (e) => {
       e.preventDefault()
       return dispatch({ type: 'ADD_LINK' })
+    },
+    handleUpdateName: (e) => {
+      return dispatch({ type: 'UPDATE_NAME', name: e.target.value })
     }
   }
 }

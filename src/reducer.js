@@ -66,6 +66,9 @@ const reducer = (state = initialState, action) => {
       newState.modules.push(addLink())
       console.log('added link module. new state: ', newState)
       return newState
+    case 'UPDATE_NAME':
+      newState.name = action.name
+      return newState
     default:
       return newState
   }
