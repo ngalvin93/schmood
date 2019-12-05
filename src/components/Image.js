@@ -2,6 +2,11 @@ import React, { Component } from 'react'
 import { InputGroup, InputGroupAddon, Button, Input } from 'reactstrap'
 
 class Image extends Component {
+
+  handleImageUrl = () => {
+    console.log('~~~~~~~~~~~~~~')
+  }
+
   render () {
     // return a new image module
     if (this.props.props.imageLink === null) {
@@ -9,7 +14,7 @@ class Image extends Component {
         <InputGroup>
           <Input bsSize="lg"/>
           <InputGroupAddon addonType="append">
-            <Button>Add</Button>
+            <Button onClick={this.handleImageUrl}>Add</Button>
           </InputGroupAddon>
         </InputGroup>
       )

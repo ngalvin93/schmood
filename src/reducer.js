@@ -42,7 +42,7 @@ const initialState = {
     ]
   }, {
     type: 2,
-    writeString: 'When you give power to an executive you do not know who will be filling that position when the time of crisis comes.',
+    writeString: 'When you give power to an executive you do not know who will be filling that position when the time of crisis comes.'
   }]
 }
 

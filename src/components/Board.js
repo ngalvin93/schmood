@@ -13,8 +13,8 @@ function Board (props) {
       <form id='mood-form'>
         <h1>{props.name}</h1>
         <InputGroup>
-          <Input id='moodName' bsSize="lg" />
-          <InputGroupAddon addonType="append">
+          <Input id='moodName' bsSize='lg' />
+          <InputGroupAddon addonType='append'>
             <Button onClick={props.handleUpdateName}>Create</Button>
           </InputGroupAddon>
         </InputGroup>
