@@ -1,12 +1,14 @@
 import React from 'react'
+import { FormGroup, Label, Input } from 'reactstrap';
 
 class Write extends React.Component {
   render () {
     if (this.props.props.writeString === null) {
       return (
-        <div>
-          <textarea placeholder='Enter some text' />
-        </div>
+        <FormGroup>
+          <Label for="exampleText">Write some text</Label>
+          <Input type="textarea" name="text" id="exampleText" />
+        </FormGroup>
       )
     } else {
       return (

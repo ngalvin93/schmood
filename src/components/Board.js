@@ -1,6 +1,7 @@
 import React from 'react'
 import Modules from './Modules'
 import { connect } from 'react-redux'
+import { InputGroup, InputGroupAddon, Button, Input } from 'reactstrap'
 import './Board.css'
 
 function Board (props) {
@@ -10,11 +11,13 @@ function Board (props) {
   return (
     <div id='mood-box'>
       <form id='mood-form'>
-        <div>
-          <label>{props.name}</label>
-          <br />
-          <input id='mood-name' type='text' name='mood-name' onChange={props.handleUpdateName} />
-        </div>
+        <h1>{props.name}</h1>
+        <InputGroup>
+          <Input id='moodName' bsSize="lg" />
+          <InputGroupAddon addonType="append">
+            <Button onClick={props.handleUpdateName}>Create</Button>
+          </InputGroupAddon>
+        </InputGroup>
         <div>
           {ModuleMap}
         </div>
@@ -50,7 +53,10 @@ const mapDispatchToProps = (dispatch) => {
       return dispatch({ type: 'ADD_LINK' })
     },
     handleUpdateName: (e) => {
-      return dispatch({ type: 'UPDATE_NAME', name: e.target.value })
+      e.preventDefault()
+      console.log('redcuucer')
+      const moodName = document.getElementById('moodName')
+      return dispatch({ type: 'UPDATE_NAME', name: moodName.value })
     }
   }
 }
