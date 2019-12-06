@@ -1,19 +1,18 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { InputGroup, InputGroupAddon, Button, Input } from 'reactstrap'
 
-class Image extends Component {
+const AddImages = (props) => {
 
-  handleImageUrl = (e) => {
+  const handleImageUrl = (e) => {
     console.log('~~~~~~~~~~~~~~', e.target.value)
     // this.setState()
   }
 
-  render () {
     // return a new image module
-    if (this.props.props.imageLink === null) {
+    if (props.imageLink === null) {
       return (
         <InputGroup>
-          <Input bsSize="lg" onChange={this.handleImageUrl}/>
+          <Input bsSize="lg" onChange={handleImageUrl}/>
           <InputGroupAddon addonType="append">
             <Button>Add</Button>
           </InputGroupAddon>
@@ -21,7 +20,7 @@ class Image extends Component {
       )
     } else {
       // renders an image
-      const imageLinkMap = this.props.props.imageLink.map((link, idx) => {
+      const imageLinkMap = props.imageLink.map((link, idx) => {
         return (
           <img key={idx} src={link} width='100%' />
         )
@@ -29,6 +28,8 @@ class Image extends Component {
       return imageLinkMap
     }
   }
-}
 
-export default Image
+
+//
+
+export default AddImages

@@ -9,7 +9,7 @@ let value = ''
 function Board (props) {
 
   const ModuleMap = props.modules.map((module, idx) => (
-    <Modules key={idx} {...module} />
+    <Modules key={idx} {...module}/>
   ))
 
   const handleKeyPress = (target) => {

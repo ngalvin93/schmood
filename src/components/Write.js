@@ -3,7 +3,8 @@ import { FormGroup, Label, Input } from 'reactstrap'
 
 class Write extends React.Component {
   render () {
-    if (this.props.props.writeString === null) {
+    console.log('WRITE COMP',this.props)
+    if (this.props.writeString === null) {
       return (
         <FormGroup>
           <Label for='exampleText'>Write some text</Label>
@@ -13,7 +14,7 @@ class Write extends React.Component {
     } else {
       return (
         <div>
-          <h1>{this.props.props.writeString}</h1>
+          <h1>{this.props.writeString}</h1>
         </div>
       )
     }
