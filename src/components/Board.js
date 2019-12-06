@@ -1,19 +1,29 @@
 import React from 'react'
 import Modules from './Modules'
 import { connect } from 'react-redux'
-import { InputGroup, InputGroupAddon, Button, Input } from 'reactstrap'
+import { InputGroup, InputGroupAddon, Button, Input, ButtonGroup } from 'reactstrap'
 import './Board.css'
 
+let value = ''
+
 function Board (props) {
+
   const ModuleMap = props.modules.map((module, idx) => (
     <Modules key={idx} {...module} />
   ))
+
+  const handleKeyPress = (target) => {
+    if (target.key === 'Enter') {
+      props.handleUpdateName(target)
+    }
+  }
+
   return (
     <div id='mood-box'>
       <form id='mood-form'>
         <h1>{props.name}</h1>
         <InputGroup>
-          <Input id='moodName' bsSize='lg' />
+          <Input id='moodName' bsSize='lg' onChange={(e) => value = e.target.value} onKeyDown={ handleKeyPress } />
           <InputGroupAddon addonType='append'>
             <Button onClick={props.handleUpdateName}>Create</Button>
           </InputGroupAddon>
@@ -21,12 +31,12 @@ function Board (props) {
         <div>
           {ModuleMap}
         </div>
-        <div id='add-item'>
-          <button id='addImage' className='add-btn' onClick={props.handleAddImage}>Image</button>
-          <button id='addWrite' className='add-btn' onClick={props.handleAddWrite}>Write</button>
-          <button id='addLink' className='add-btn' onClick={props.handleAddLink}>Link</button>
-        </div>
-        <button id='share-btn'>Share</button>
+        <ButtonGroup>
+          <Button onClick={props.handleAddImage}>Image</Button>
+          <Button onClick={props.handleAddWrite}>Write</Button>
+          <Button onClick={props.handleAddLink}>Link</Button>
+        </ButtonGroup>
+        <Button color="primary" size="lg">Share</Button>
       </form>
     </div>
   )
@@ -42,21 +52,20 @@ const mapDispatchToProps = (dispatch) => {
   return {
     handleAddImage: (e) => {
       e.preventDefault()
-      return dispatch({ type: 'ADD_IMAGE' })
+      dispatch({ type: 'ADD_IMAGE' })
     },
     handleAddWrite: (e) => {
       e.preventDefault()
-      return dispatch({ type: 'ADD_WRITE' })
+      dispatch({ type: 'ADD_WRITE' })
     },
     handleAddLink: (e) => {
       e.preventDefault()
-      return dispatch({ type: 'ADD_LINK' })
+      dispatch({ type: 'ADD_LINK' })
     },
     handleUpdateName: (e) => {
       e.preventDefault()
-      console.log('redcuucer')
-      const moodName = document.getElementById('moodName')
-      return dispatch({ type: 'UPDATE_NAME', name: moodName.value })
+      dispatch({ type: 'UPDATE_NAME', name: value })
+      document.getElementById('moodName').value = ''
     }
   }
 }

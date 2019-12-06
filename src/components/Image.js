@@ -3,8 +3,9 @@ import { InputGroup, InputGroupAddon, Button, Input } from 'reactstrap'
 
 class Image extends Component {
 
-  handleImageUrl = () => {
-    console.log('~~~~~~~~~~~~~~')
+  handleImageUrl = (e) => {
+    console.log('~~~~~~~~~~~~~~', e.target.value)
+    // this.setState()
   }
 
   render () {
@@ -12,9 +13,9 @@ class Image extends Component {
     if (this.props.props.imageLink === null) {
       return (
         <InputGroup>
-          <Input bsSize="lg"/>
+          <Input bsSize="lg" onChange={this.handleImageUrl}/>
           <InputGroupAddon addonType="append">
-            <Button onClick={this.handleImageUrl}>Add</Button>
+            <Button>Add</Button>
           </InputGroupAddon>
         </InputGroup>
       )
