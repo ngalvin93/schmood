@@ -4,41 +4,57 @@ import { connect } from 'react-redux'
 import { InputGroup, InputGroupAddon, Button, Input, ButtonGroup } from 'reactstrap'
 import './Board.css'
 
-let value = ''
+class Board extends React.Component {
+  state = {
+    input: ''
+  }
 
-function Board (props) {
-  const ModuleMap = props.modules.map((module, idx) => (
-    <Modules key={idx} {...module} />
-  ))
-
-  const handleKeyPress = (target) => {
-    if (target.key === 'Enter') {
-      props.handleUpdateName(target)
+  handleInputKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault()
+      this.props.handleUpdateName(this.state.input)
+      this.setState({input: ''})
     }
   }
+
+  handleInputChangeEvent = (e) => {
+    this.setState({input: e.target.value})
+  }
+
+  handleButton = () => {
+    this.props.handleUpdateName(this.state.input)
+    this.setState({input: ''})
+  }
+
+render () {
+
+  const ModuleMap = this.props.modules.map((module, idx) => (
+    <Modules key={idx} {...module} />
+  ))
 
   return (
     <div id='mood-box'>
       <form id='mood-form'>
-        <h1>{props.name}</h1>
+        <h1>{ this.props.name }</h1>
         <InputGroup>
-          <Input id='moodName' bsSize='lg' onChange={(e) => value = e.target.value} onKeyDown={handleKeyPress} />
+          <Input bsSize='lg' value={ this.state.input } onChange={ this.handleInputChangeEvent } onKeyDown={ this.handleInputKeyDown } />
           <InputGroupAddon addonType='append'>
-            <Button onClick={props.handleUpdateName}>Create</Button>
+            <Button onClick={ this.handleButton }>Create</Button>
           </InputGroupAddon>
         </InputGroup>
         <div>
           {ModuleMap}
         </div>
         <ButtonGroup>
-          <Button onClick={props.handleAddImage}>Image</Button>
-          <Button onClick={props.handleAddWrite}>Write</Button>
-          <Button onClick={props.handleAddLink}>Link</Button>
+          <Button onClick={this.props.handleAddImage}>Image</Button>
+          <Button onClick={this.props.handleAddWrite}>Write</Button>
+          <Button onClick={this.props.handleAddLink}>Link</Button>
         </ButtonGroup>
         <Button color='primary' size='lg'>Share</Button>
       </form>
     </div>
   )
+}
 }
 
 // maps the current state to the component via props
@@ -61,10 +77,8 @@ const mapDispatchToProps = (dispatch) => {
       e.preventDefault()
       dispatch({ type: 'ADD_LINK' })
     },
-    handleUpdateName: (e) => {
-      e.preventDefault()
-      dispatch({ type: 'UPDATE_NAME', name: value })
-      document.getElementById('moodName').value = ''
+    handleUpdateName: (newName) => {
+      dispatch({ type: 'UPDATE_NAME', name: newName })
     }
   }
 }
