@@ -52,7 +52,7 @@ const reducer = (state = initialState, action) => {
   switch (action.type) {
     case 'ADD_IMAGE':
       newState.modules.push(addImage())
-      console.log('added image module. new state: ', newState)
+      console.log('adding this img link to the state: ', action.link)
       return newState
     case 'ADD_WRITE':
       newState.modules.push(addWrite())

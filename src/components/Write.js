@@ -3,7 +3,6 @@ import { FormGroup, Label, Input } from 'reactstrap'
 
 class Write extends React.Component {
   render () {
-    console.log('WRITE COMP')
     if (this.props.writeString === null) {
       return (
         <FormGroup>
