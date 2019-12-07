@@ -1,5 +1,5 @@
 import React from 'react'
-import AddImages from './Image'
+import Image from './Image'
 import Write from './Write'
 import Link from './Link'
 
@@ -7,7 +7,7 @@ import Link from './Link'
 // the components should be functional
 function Modules (props) {
   if (props.type === 1) {
-    return <AddImages {...props} />
+    return <Image {...props} />
   } else if (props.type === 2) {
     return <Write {...props} />
   } else {
