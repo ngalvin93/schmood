@@ -57,11 +57,6 @@ class Image extends React.Component {
   }
 
   render () {
-
-    // conditional
-    // if this.state.link then return img
-    // else return input
-
     if (this.state.link) {
       return (
         <img src={this.state.link} onError={this.handleImgErr} width='100%' />
