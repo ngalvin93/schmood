@@ -7,9 +7,8 @@ import './Board.css'
 let value = ''
 
 function Board (props) {
-
   const ModuleMap = props.modules.map((module, idx) => (
-    <Modules key={idx} {...module}/>
+    <Modules key={idx} {...module} />
   ))
 
   const handleKeyPress = (target) => {
@@ -23,7 +22,7 @@ function Board (props) {
       <form id='mood-form'>
         <h1>{props.name}</h1>
         <InputGroup>
-          <Input id='moodName' bsSize='lg' onChange={(e) => value = e.target.value} onKeyDown={ handleKeyPress } />
+          <Input id='moodName' bsSize='lg' onChange={(e) => value = e.target.value} onKeyDown={handleKeyPress} />
           <InputGroupAddon addonType='append'>
             <Button onClick={props.handleUpdateName}>Create</Button>
           </InputGroupAddon>
@@ -36,7 +35,7 @@ function Board (props) {
           <Button onClick={props.handleAddWrite}>Write</Button>
           <Button onClick={props.handleAddLink}>Link</Button>
         </ButtonGroup>
-        <Button color="primary" size="lg">Share</Button>
+        <Button color='primary' size='lg'>Share</Button>
       </form>
     </div>
   )
