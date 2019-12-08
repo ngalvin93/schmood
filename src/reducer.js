@@ -1,10 +1,8 @@
 // will be able to refactor the adding new item functions by passing in an argument in the reducer
-function addImage () {
+function addImage (validImgLink) {
   return {
     type: 1,
-    imageLink: null
-    // writeString: null,
-    // webLink: null
+    imageLink: validImgLink
   }
 }
 
@@ -51,8 +49,7 @@ const reducer = (state = initialState, action) => {
 
   switch (action.type) {
     case 'ADD_IMAGE':
-      newState.modules.push(addImage())
-      console.log('adding this img link to the state: ', action.link)
+      newState.modules.push(addImage(action.link))
       return newState
     case 'ADD_WRITE':
       newState.modules.push(addWrite())

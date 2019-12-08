@@ -43,12 +43,12 @@ class Image extends React.Component {
   }
 
   handleLoadImg = () => {
-    console.log('Image link is valid!!!!')
     this.props.handleAddImage(this.state.link)
   }
 
   render () {
     if (this.state.link) {
+      // IMG
       return (
         <img src={this.state.link} onError={this.handleImgErr} onLoad={ this.handleLoadImg } width='100%' alt='blah'/>
       )
