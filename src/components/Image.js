@@ -1,6 +1,7 @@
 import React from 'react'
 import { InputGroup, InputGroupAddon, Button, Input } from 'reactstrap'
 import { connect } from 'react-redux'
+import './Image.css'
 
 class Image extends React.Component {
   state = {
@@ -50,27 +51,27 @@ class Image extends React.Component {
     if (this.state.link) {
       // IMG
       return (
-        <img src={this.state.link} onError={this.handleImgErr} onLoad={ this.handleLoadImg } width='100%' alt='blah'/>
+        <img className='image' src={this.state.link} onError={this.handleImgErr} onLoad={ this.handleLoadImg } width='100%' alt='blah'/>
       )
     } else {
       if (this.state.isValid) {
       // DEFAULT IMG INPUT
       return (
-        <InputGroup>
-        <Input bsSize='lg' value={ this.state.input === '' ? this.state.placeholder : this.state.input } onChange={ this.handleInputChange } onKeyDown={ this.handleInputKeyDown } onFocus={ this.handleFocus } />
-        <InputGroupAddon addonType='append'>
-          <Button onClick={ this.handleBtnClick }>Add</Button>
-        </InputGroupAddon>
-      </InputGroup>
-      )} else {
-        // INVALID IMG URL INPUT
-        return (
-          <InputGroup>
-          <Input invalid bsSize='lg' value={ this.state.input === '' ? this.state.placeholder : this.state.input } onChange={ this.handleInputChange } onKeyDown={ this.handleInputKeyDown } onFocus={ this.handleFocus } />
+        <InputGroup className='imageInputGrp'>
+          <Input value={ this.state.input === '' ? this.state.placeholder : this.state.input } onChange={ this.handleInputChange } onKeyDown={ this.handleInputKeyDown } onFocus={ this.handleFocus } />
           <InputGroupAddon addonType='append'>
             <Button onClick={ this.handleBtnClick }>Add</Button>
           </InputGroupAddon>
         </InputGroup>
+      )} else {
+        // INVALID IMG URL INPUT
+        return (
+          <InputGroup className='imageInputGrp'>
+            <Input invalid value={ this.state.input === '' ? this.state.placeholder : this.state.input } onChange={ this.handleInputChange } onKeyDown={ this.handleInputKeyDown } onFocus={ this.handleFocus } />
+            <InputGroupAddon addonType='append'>
+              <Button onClick={ this.handleBtnClick }>Add</Button>
+            </InputGroupAddon>
+          </InputGroup>
         )
       }
     }

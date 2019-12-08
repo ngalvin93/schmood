@@ -1,47 +1,21 @@
 #mood-box {
-    margin: auto;
     width: 50%;
-    text-align: left;
+    margin: auto;
 }
 
-#mood-form {
+#addBtnGroup {
+    padding: 10px 0;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
 }
 
-#mood-name {
-    display: block;
-    border: none;
-    border-radius: 3px;
-    width: 100%;
+.addBtn {
+    flex: 1;
+    flex-grow: 1;
 }
 
-#add-item {
-    display: flex;
-    width: 100%;
-}
-
-.add-btn {
-    padding: 10px;
-    background-color: rgb(190, 190, 190);
-    color: white;
-    border: none;
-    border-radius: 3px;
-    width: 100%;
-    cursor: pointer;
-}
-
-.add-btn:hover {
-    background-color: white;
-    color: black;
-}
-
-#share-btn {
-    padding: 10px;
-    background-color: tomato;
-    color: white;
-    border: none;
-    border-radius: 3px;
-    width: 100%;
-    cursor: pointer;
+.shareBtn {
+    padding-bottom: 20px;
 }

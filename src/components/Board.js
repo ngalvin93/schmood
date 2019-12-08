@@ -1,7 +1,7 @@
 import React from 'react'
 import Modules from './Modules'
 import { connect } from 'react-redux'
-import { InputGroup, InputGroupAddon, Button, Input, ButtonGroup, Form } from 'reactstrap'
+import { InputGroup, InputGroupAddon, Button, Input, Form } from 'reactstrap'
 import './Board.css'
 
 class Board extends React.Component {
@@ -34,9 +34,9 @@ render () {
 
   return (
       <Form id='mood-box'>
-        <h1>{ this.props.name }</h1>
+        <h3>{ this.props.name }</h3>
         <InputGroup>
-          <Input bsSize='lg' value={ this.state.input } onChange={ this.handleInputChangeEvent } onKeyDown={ this.handleInputKeyDown } />
+          <Input placeholder ='Enter mood name' value={ this.state.input } onChange={ this.handleInputChangeEvent } onKeyDown={ this.handleInputKeyDown } />
           <InputGroupAddon addonType='append'>
             <Button onClick={ this.handleBtn }>Create</Button>
           </InputGroupAddon>
@@ -44,12 +44,12 @@ render () {
         <div>
           { ModuleMap }
         </div>
-        <ButtonGroup>
-          <Button onClick={ this.props.handleAddImage }>Image</Button>
-          <Button onClick={ this.props.handleAddWrite }>Write</Button>
-          <Button onClick={ this.props.handleAddLink }>Link</Button>
-        </ButtonGroup>
-        <Button color='primary' size='lg'>Share</Button>
+        <div id='addBtnGroup'>
+          <Button className='addBtn' color="warning" onClick={ this.props.handleAddImage }>Add Image</Button>
+          <Button className='addBtn' color="success" onClick={ this.props.handleAddWrite }>Add Text</Button>
+          <Button className='addBtn' color="info" onClick={ this.props.handleAddLink }>Add Link</Button>
+        </div>
+        <Button id='shareBtn' color='primary' block>Share</Button>
       </Form>
   )
 }
