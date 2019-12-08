@@ -12,7 +12,7 @@ Create front end based application with React
 ## Challenges
 - Storing and sharing state without creating user accounts
 - Managing state across components
-- Initializing React forms
+- Initializing React forms, what constitues as local state or global state
 
 ## Future Plans
 - Authetication
