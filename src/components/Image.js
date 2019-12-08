@@ -12,6 +12,7 @@ class Image extends React.Component {
   }
 
   handleInputChange = (e) => {
+    console.log('handleinputchange')
     this.setState({ 
       input: e.target.value,
       isValid: true,
@@ -39,11 +40,17 @@ class Image extends React.Component {
     })
   }
 
-  handleFocus = () => {
-    this.setState({ placeholder: '' })
+  handleFocus = (e) => {
+    // problem with below is that when input is on focus, it updates this.state.placeholder, when that is not needed
+    // this.setState({ placeholder: '' })
+    console.log('handlefocus')
+    if (!this.state.input) {
+      e.target.value = ''
+    }
   }
 
   handleLoadImg = () => {
+    console.log('handleloadimg')
     this.props.handleAddImage(this.state.link)
   }
 
@@ -56,6 +63,7 @@ class Image extends React.Component {
     } else {
       if (this.state.isValid) {
       // DEFAULT IMG INPUT
+      console.log('default img input')
       return (
         <InputGroup className='imageInputGrp'>
           <Input value={ this.state.input === '' ? this.state.placeholder : this.state.input } onChange={ this.handleInputChange } onKeyDown={ this.handleInputKeyDown } onFocus={ this.handleFocus } />
@@ -65,6 +73,7 @@ class Image extends React.Component {
         </InputGroup>
       )} else {
         // INVALID IMG URL INPUT
+        console.log('invalid img input')
         return (
           <InputGroup className='imageInputGrp'>
             <Input invalid value={ this.state.input === '' ? this.state.placeholder : this.state.input } onChange={ this.handleInputChange } onKeyDown={ this.handleInputKeyDown } onFocus={ this.handleFocus } />

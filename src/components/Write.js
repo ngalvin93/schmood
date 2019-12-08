@@ -12,9 +12,10 @@ class Write extends React.Component {
       )
     } else {
       return (
-        <div>
-          <h1>{this.props.writeString}</h1>
-        </div>
+        <FormGroup>
+          <Label for='exampleText'>Write some text</Label>
+          <Input type='textarea' name='text' id='exampleText' />
+        </FormGroup>
       )
     }
   }

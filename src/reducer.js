@@ -51,7 +51,9 @@ const reducer = (state = initialState, action) => {
 
   switch (action.type) {
     case 'ADD_IMAGE':
+      console.log('ADD_IMAGE action!!!', action.link)
       newState.modules.push(addImage(action.link))
+      console.log(newState)
       return newState
     case 'ADD_WRITE':
       newState.modules.push(addWrite())
@@ -65,6 +67,7 @@ const reducer = (state = initialState, action) => {
       newState.name = action.name
       return newState
     default:
+      console.log('DEFAULT CASE!!!!')
       return newState
   }
 }
