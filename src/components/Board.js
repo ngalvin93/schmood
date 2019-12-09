@@ -45,7 +45,17 @@ class Board extends React.Component {
 
 render () {
 
-  const ModuleMap = this.props.modules.map((module, idx) => (
+  // const ModuleMap = function map () {
+  //   console.log('MODULE MAPPING')
+  //   this.props.modules.map((module, idx) => (
+  //   <Modules key={idx} {...module} />
+  // ))
+  // }
+
+// WHY DOES THE BELOW NOT WORK WHEN I REMOVE CONSOLE LOG????????
+  const ModuleMap =
+    console.log('MODULE MAPPING')
+    this.props.modules.map((module, idx) => (
     <Modules key={idx} {...module} />
   ))
 

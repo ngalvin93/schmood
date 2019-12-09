@@ -55,6 +55,7 @@ class Image extends React.Component {
   }
 
   render () {
+    // IF THERE IS AN IMG LINK IN THE LOCAL STATE...
     if (this.state.link) {
       // IMG
       return (

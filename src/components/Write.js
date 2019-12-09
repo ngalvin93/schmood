@@ -1,24 +1,78 @@
 import React from 'react'
-import { FormGroup, Label, Input } from 'reactstrap'
+import { FormGroup, Input, Button } from 'reactstrap'
+import { connect } from 'react-redux'
 
 class Write extends React.Component {
+  state = {
+    input: '',
+    text: ''
+  }
+
+  handleInputChange = (e) => {
+    console.log('input change...')
+    console.log(e.target.value)
+    this.setState({ input: e.target.value })
+  }
+
+  handleBtnClick = () => {
+    const newText = this.state.input
+    this.setState({text: newText})
+    this.props.handleAddText(newText)
+  }
+
   render () {
-    if (this.props.writeString === null) {
+    // if there is some valid text in this.state.text
+    // then render the visual text
+
+    // if there is not text in this.state.text
+    // then render the textarea
+
+    if (this.state.text) {
       return (
-        <FormGroup>
-          <Label for='exampleText'>Write some text</Label>
-          <Input type='textarea' name='text' id='exampleText' />
-        </FormGroup>
+        <h2>{ this.state.text }</h2>
       )
     } else {
       return (
         <FormGroup>
-          <Label for='exampleText'>Write some text</Label>
-          <Input type='textarea' name='text' id='exampleText' />
-        </FormGroup>
+        <Input type='textarea' placeholder='Write some text' name='text' onChange={ this.handleInputChange } />
+        <Button onClick={ this.handleBtnClick } >Save</Button>
+      </FormGroup>
       )
+    }
+
+    // if (this.props.writeString === null) {
+    //   return (
+    //     <FormGroup>
+    //       <Input type='textarea' placeholder='Write some text' name='text' />
+    //       <Button>Save</Button>
+    //     </FormGroup>
+    //   )
+    // } else {
+    //   return (
+    //     <FormGroup>
+    //       <Input type='textarea' placeholder='Write some text' name='text' />
+    //       <Button>Save</Button>
+    //     </FormGroup>
+    //   )
+    // }
+  }
+}
+
+const mapStateToProps = (state) => {
+  return state
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    handleAddText: (newText) => {
+      dispatch({ type: 'ADD_TEXT', text: newText })
     }
   }
 }
 
-export default Write
+const ConnectedText = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Write)
+
+export default ConnectedText
