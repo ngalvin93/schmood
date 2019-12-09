@@ -10,7 +10,7 @@ function addWrite () {
   return {
     type: 2,
     // imageLink: null,
-    writeString: null
+    text: null
     // webLink: null
   }
 }
@@ -19,7 +19,7 @@ function addLink () {
   return {
     type: 3,
     // imageLink: null,
-    // writeString: null,
+    // text: null,
     webLink: null
   }
 }
@@ -40,7 +40,7 @@ const initialState = {
   //   ]
   // }, {
   //   type: 2,
-  //   writeString: 'When you give power to an executive you do not know who will be filling that position when the time of crisis comes.'
+  //   text: 'When you give power to an executive you do not know who will be filling that position when the time of crisis comes.'
   // }]
   name: 'schmood',
   modules: []
@@ -51,9 +51,11 @@ const reducer = (state = initialState, action) => {
 
   switch (action.type) {
     case 'ADD_IMAGE':
+      console.log('ADD_IMAGE action!!!', action.link)
       newState.modules.push(addImage(action.link))
+      console.log(newState)
       return newState
-    case 'ADD_WRITE':
+    case 'ADD_TEXT':
       newState.modules.push(addWrite())
       console.log('added write module. new state: ', newState)
       return newState
@@ -65,6 +67,7 @@ const reducer = (state = initialState, action) => {
       newState.name = action.name
       return newState
     default:
+      console.log('DEFAULT CASE!!!!')
       return newState
   }
 }
