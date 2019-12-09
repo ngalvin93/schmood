@@ -9,15 +9,20 @@ class Write extends React.Component {
   }
 
   handleInputChange = (e) => {
-    console.log('input change...')
-    console.log(e.target.value)
     this.setState({ input: e.target.value })
   }
 
+  handleInputKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault()
+      this.setState({text: this.state.input})
+      this.props.handleAddText(this.state.input)
+    }
+  }
+
   handleBtnClick = () => {
-    const newText = this.state.input
-    this.setState({text: newText})
-    this.props.handleAddText(newText)
+    this.setState({text: this.state.input})
+    this.props.handleAddText(this.state.input)
   }
 
   render () {
@@ -28,7 +33,7 @@ class Write extends React.Component {
     } else {
       return (
         <FormGroup>
-        <Input type='textarea' placeholder='Write some text' name='text' onChange={ this.handleInputChange } />
+        <Input type='textarea' placeholder='Write some text' name='text' onChange={ this.handleInputChange } onKeyDown={ this.handleInputKeyDown } />
         <Button onClick={ this.handleBtnClick } >Save</Button>
       </FormGroup>
       )
