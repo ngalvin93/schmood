@@ -1,48 +1,30 @@
-// will be able to refactor the adding new item functions by passing in an argument in the reducer
-function addImage (validImgLink) {
+function addImage (url) {
   return {
     type: 1,
-    imageLink: validImgLink
+    url: url
   }
 }
 
-function addWrite () {
+function addText (text) {
   return {
     type: 2,
-    // imageLink: null,
-    text: null
-    // webLink: null
+    text: text
   }
 }
 
-function addLink () {
+function addLink (link) {
   return {
     type: 3,
-    // imageLink: null,
-    // text: null,
-    webLink: null
+    link: link
   }
 }
 
-const makeDeepCopy = (obj) => {
-  return JSON.parse(JSON.stringify(obj))
+const makeDeepCopy = (state) => {
+  return JSON.parse(JSON.stringify(state))
 }
 
 const initialState = {
-  // name: 'Mood name',
-  // modules: [{
-  //   type: 1,
-  //   imageLink: [
-  //     'https://luna1.co/8ff405.jpg',
-  //     'https://www.jdmaster.net/wp-content/uploads/2015/04/ek-99-00.jpg',
-  //     'https://newyork.doverstreetmarket.com/media/cache/stream/rc/LQGjgbBY/uploads/2019-11/dsmny-salefw19-nowon-1.jpg',
-  //     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_NrTABkz-7gx-s6FInjaH05VbDoqzlW9JiLa8ETPLp2jPNPqXnQ&s'
-  //   ]
-  // }, {
-  //   type: 2,
-  //   text: 'When you give power to an executive you do not know who will be filling that position when the time of crisis comes.'
-  // }]
-  name: 'schmood',
+  name: '',
   modules: []
 }
 
@@ -51,23 +33,23 @@ const reducer = (state = initialState, action) => {
 
   switch (action.type) {
     case 'ADD_IMAGE':
-      console.log('ADD_IMAGE action!!!', action.link)
       newState.modules.push(addImage(action.link))
-      console.log(newState)
+      console.log('NEW GLOBAL STATE:', newState)
       return newState
     case 'ADD_TEXT':
-      newState.modules.push(addWrite())
-      console.log('added write module. new state: ', newState)
+      newState.modules.push(addText(action.text))
+      console.log('NEW GLOBAL STATE:', newState)
       return newState
     case 'ADD_LINK':
-      newState.modules.push(addLink())
-      console.log('added link module. new state: ', newState)
+      newState.modules.push(addLink(action.link))
+      console.log('NEW GLOBAL STATE:', newState)
       return newState
     case 'UPDATE_NAME':
       newState.name = action.name
+      console.log('NEW GLOBAL STATE:', newState)
       return newState
     default:
-      console.log('DEFAULT CASE!!!!')
+      console.log('DEFAULT GLOBAL STATE:', newState)
       return newState
   }
 }

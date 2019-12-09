@@ -33,9 +33,9 @@ class Write extends React.Component {
     } else {
       return (
         <FormGroup>
-        <Input type='textarea' placeholder='Write some text' name='text' onChange={ this.handleInputChange } onKeyDown={ this.handleInputKeyDown } />
-        <Button onClick={ this.handleBtnClick } >Save</Button>
-      </FormGroup>
+          <Input type='textarea' placeholder='Write some text' name='text' onChange={ this.handleInputChange } onKeyDown={ this.handleInputKeyDown } />
+          <Button onClick={ this.handleBtnClick } >Save</Button>
+        </FormGroup>
       )
     }
   }
