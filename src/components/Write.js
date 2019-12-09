@@ -21,12 +21,6 @@ class Write extends React.Component {
   }
 
   render () {
-    // if there is some valid text in this.state.text
-    // then render the visual text
-
-    // if there is not text in this.state.text
-    // then render the textarea
-
     if (this.state.text) {
       return (
         <h2>{ this.state.text }</h2>
@@ -39,22 +33,6 @@ class Write extends React.Component {
       </FormGroup>
       )
     }
-
-    // if (this.props.writeString === null) {
-    //   return (
-    //     <FormGroup>
-    //       <Input type='textarea' placeholder='Write some text' name='text' />
-    //       <Button>Save</Button>
-    //     </FormGroup>
-    //   )
-    // } else {
-    //   return (
-    //     <FormGroup>
-    //       <Input type='textarea' placeholder='Write some text' name='text' />
-    //       <Button>Save</Button>
-    //     </FormGroup>
-    //   )
-    // }
   }
 }
 
