@@ -5,10 +5,13 @@ import { InputGroup, InputGroupAddon, Button, Input, Form } from 'reactstrap'
 import './Board.css'
 
 class Board extends React.Component {
-  state = {
+constructor(props) {
+  super(props)
+  this.state = {
     input: '',
     addItems: []
   }
+}
 
   handleInputKeyDown = (e) => {
     if (e.key === 'Enter') {

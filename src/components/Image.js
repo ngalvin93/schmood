@@ -4,11 +4,14 @@ import { connect } from 'react-redux'
 import './Image.css'
 
 class Image extends React.Component {
-  state = {
-    input: '',
-    link: '',
-    isValid: true,
-    placeholder: 'Enter image URL'
+  constructor(props) {
+    super(props)
+    this.state = {
+      input: '',
+      link: '',
+      isValid: true,
+      placeholder: 'Enter image URL'
+    }
   }
 
   handleInputChange = (e) => {

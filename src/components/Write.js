@@ -3,9 +3,12 @@ import { FormGroup, Input, Button } from 'reactstrap'
 import { connect } from 'react-redux'
 
 class Write extends React.Component {
-  state = {
-    input: '',
-    text: ''
+  constructor (props) {
+    super(props)
+    this.state = {
+      input: '',
+      text: ''
+    }
   }
 
   handleInputChange = (e) => {

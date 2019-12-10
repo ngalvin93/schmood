@@ -4,9 +4,12 @@ import { connect } from 'react-redux'
 import Microlink from '@microlink/react'
 
 class Link extends React.Component {
-  state = {
-    input: '',
-    link: ''
+  constructor (props) {
+    super(props)
+    this.state = {
+      input: '',
+      link: ''
+    }
   }
 
   handleInputChange = (e) => {
@@ -29,7 +32,7 @@ class Link extends React.Component {
   render () {
     if (this.state.link) {
       return (
-      <Microlink url={this.state.link} size='large' media='image'/>
+      <Microlink url={this.state.link} size='small' media='image'/>
       )
     } else {
       return (
