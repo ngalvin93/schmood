@@ -21,9 +21,9 @@ function Header () {
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className='ml-auto' navbar>
-              <NavItem>
-                <NavLink href='/how-to-use'>How to use</NavLink>
-              </NavItem>
+            <NavItem>
+              <NavLink href='/how-to-use'>How to use</NavLink>
+            </NavItem>
             <NavItem>
               <NavLink href='https://github.com/ngalvin93/schmood'>Github</NavLink>
             </NavItem>
