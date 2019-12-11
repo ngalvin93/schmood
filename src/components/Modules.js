@@ -5,7 +5,7 @@ import Link from './Link'
 
 // use the spread operator to pass in props to avoid props.props in child components
 // the components should be functional
-function Modules (props) {
+export default function Modules (props) {
   if (props.type === 1) {
     return <Image {...props} />
   } else if (props.type === 2) {
@@ -14,5 +14,3 @@ function Modules (props) {
     return <Link {...props} />
   }
 }
-
-export default Modules
