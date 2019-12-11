@@ -31,18 +31,18 @@ constructor(props) {
   }
 
   handleAddImage = () => {
-    console.log('add image')
+    // console.log('add image')
     this.setState({ addItems: [...this.state.addItems, { type: 1 }]})
     console.log(this.state.addItems)
   }
 
   handleAddWrite = () => {
-    console.log('add write')
+    // console.log('add write')
     this.setState({ addItems: [...this.state.addItems, { type: 2 }]})
   }
 
   handleAddLink = () => {
-    console.log('add link')
+    // console.log('add link')
     this.setState({ addItems: [...this.state.addItems, { type: 3 }]})
   }
 
@@ -57,7 +57,7 @@ render () {
 
 // WHY DOES THE BELOW NOT WORK WHEN I REMOVE CONSOLE LOG????????
   const ModuleMap =
-    console.log('MODULE MAPPING')
+    // console.log('MODULE MAPPING')
     this.props.modules.map((module, idx) => (
     <Modules key={idx} {...module} />
   ))

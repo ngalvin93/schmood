@@ -32,7 +32,7 @@ class Link extends React.Component {
   render () {
     if (this.state.link) {
       return (
-      <Microlink url={this.state.link} size='small' media='image'/>
+      <Microlink url={this.state.link} size='large' media='image'/>
       )
     } else {
       return (

@@ -8,5 +8,25 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-analytics.js"></script>
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyBaNX_JtewiG-ZCEvg6_cvmtrXiXJGpGiE",
+        authDomain: "schmood-50880.firebaseapp.com",
+        databaseURL: "https://schmood-50880.firebaseio.com",
+        projectId: "schmood-50880",
+        storageBucket: "schmood-50880.appspot.com",
+        messagingSenderId: "935707465210",
+        appId: "1:935707465210:web:9a5107ac27ea16df5e0043",
+        measurementId: "G-JYKVJKXYB5"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
   </body>
 </html>
