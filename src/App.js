@@ -9,15 +9,17 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import './App.css'
 
 class App extends React.Component {
-  constructor (props) {
-    super(props)
+  constructor () {
+    super()
     Firebase.initializeApp(config)
+    this.state = {}
   }
 
   componentDidMount () {
     const ref = Firebase.database().ref('/')
     ref.on('value', snapshot => {
       console.log('snapshot...', snapshot.val())
+      this.setState({users: snapshot.val()})
     })
   }
 
