@@ -15,10 +15,7 @@ class App extends React.Component {
   }
 
   componentDidMount () {
-    // console.log('did mount')
-    // this.writeUserData()
     const ref = Firebase.database().ref('/')
-    // console.log(ref)
     ref.on('value', snapshot => {
       console.log('snapshot...', snapshot.val())
     })
