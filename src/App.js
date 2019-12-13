@@ -6,7 +6,9 @@ import Header from './components/Header'
 import Board from './components/Board'
 import HowToUse from './components/HowToUse'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { incrementUser, getCurrentId } from './firebase-service'
 import './App.css'
+// import { get } from 'http'
 
 class App extends React.Component {
   constructor () {
@@ -16,11 +18,9 @@ class App extends React.Component {
   }
 
   componentDidMount () {
-    const ref = Firebase.database().ref('/')
-    ref.on('value', snapshot => {
-      console.log('snapshot...', snapshot.val())
-      this.setState({users: snapshot.val()})
-    })
+    console.log('did mount')
+    incrementUser()
+    getCurrentId()
   }
 
   componentDidUpdate () {
