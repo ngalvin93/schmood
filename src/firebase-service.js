@@ -23,7 +23,7 @@ export function getCurrentId () {
 
 export function saveUserState (shareData) {
   const ref = Firebase.database().ref('/share')
-  return ref.push({ shareData }).key
+  return ref.push(shareData).key
 }
 
 export function findShareKey (shareKey) {
@@ -32,6 +32,8 @@ export function findShareKey (shareKey) {
     .orderByKey()
     .equalTo(shareKey)
   query.on('value', (snap) => {
-    console.log('query result:', snap.val())
+    // query returns an object
+    var data = snap.child(shareKey).val()
+    console.log('query result:', data)
   })
 }
