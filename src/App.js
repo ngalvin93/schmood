@@ -7,7 +7,7 @@ import Board from './components/Board'
 import HowToUse from './components/HowToUse'
 import SharedBoard from './components/SharedBoard'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import { incrementUser, findShareKey } from './firebase-service'
+import { findShareKey } from './firebase-service'
 import './App.css'
 class App extends React.Component {
   constructor () {
@@ -17,8 +17,7 @@ class App extends React.Component {
 
   componentDidMount () {
     console.log('did mount')
-    incrementUser()
-    findShareKey('-Lw4NOkwVE6iXOMO3VRk')
+    findShareKey('-Lw4P7x2_IHRo7coOsN_')
   }
 
   render () {
