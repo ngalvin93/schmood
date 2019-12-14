@@ -2,6 +2,7 @@ import React from 'react'
 import Modules from './Modules'
 import { connect } from 'react-redux'
 import { InputGroup, InputGroupAddon, Button, Input, Form } from 'reactstrap'
+import { saveUserState } from '../firebase-service'
 import './Board.css'
 
 class Board extends React.Component {
@@ -46,6 +47,19 @@ constructor(props) {
     return this.props.modules.map((module, idx) => (<Modules key={idx} {...module} />))
   }
 
+  handleShare = () => {
+    console.log(this.props.name)
+    console.log(this.props.modules)
+    // console.log({
+    //   name: this.props.name,
+    //   modules: this.props.modules
+    // })
+    saveUserState({
+      name: this.props.name,
+      modules: this.props.modules
+    })
+  }
+
 render () {
 // WHY DOES THE BELOW NOT WORK WHEN I REMOVE CONSOLE LOG????????
   // const ModuleMap = this.props.modules.map((module, idx) => (
@@ -76,7 +90,7 @@ render () {
           <Button className='addBtn' color="success" onClick={ this.handleAddWrite }>Add Text</Button>
           <Button className='addBtn' color="info" onClick={ this.handleAddLink }>Add Link</Button>
         </div>
-        <Button id='shareBtn' color='primary' block>Share</Button>
+        <Button id='shareBtn' color='primary' block onClick={this.handleShare}>Share</Button>
       </Form>
   )
 }}

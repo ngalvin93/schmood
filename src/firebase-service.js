@@ -6,7 +6,7 @@ export function incrementUser () {
     ref.once('value')
     .then(function (snapshot) {
         let currentUser = snapshot.val().user
-        Firebase.database().ref('/').set({
+        Firebase.database().ref('/').update({
             user: currentUser + 1
         })
     })
@@ -16,13 +16,19 @@ export function getCurrentId () {
     let ref = Firebase.database().ref('/')
     ref.once('value')
     .then((snapshot) => {
-        console.log('current id: ', snapshot)
-        return snapshot
+        console.log('current id: ', snapshot.val().user)
+        return snapshot.val().user
     })
 }
 
-// function saveUserState (currentId, state) {
-
-// }
+export function saveUserState (state) {
+    let ref = Firebase.database().ref('/share').push()
+    // ref.once('value')
+    // .then(snapshot => {
+    //     let userState = snapshot.val()
+    //     console.log(userState)
+    // })
+    ref.set({ state})
+}
 
 // export default { incrementUser, getCurrentId }
