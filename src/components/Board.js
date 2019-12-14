@@ -50,14 +50,11 @@ constructor(props) {
   handleShare = () => {
     console.log(this.props.name)
     console.log(this.props.modules)
-    // console.log({
-    //   name: this.props.name,
-    //   modules: this.props.modules
-    // })
-    saveUserState({
+    const key = saveUserState({
       name: this.props.name,
       modules: this.props.modules
     })
+    console.log('handlshare result',key)
   }
 
 render () {

@@ -2,33 +2,36 @@ import * as Firebase from 'firebase/app'
 import 'firebase/database'
 
 export function incrementUser () {
-    let ref = Firebase.database().ref('/')
-    ref.once('value')
+  const ref = Firebase.database().ref('/')
+  ref.once('value')
     .then(function (snapshot) {
-        let currentUser = snapshot.val().user
-        Firebase.database().ref('/').update({
-            user: currentUser + 1
-        })
+      const currentUser = snapshot.val().user
+      Firebase.database().ref('/').update({
+        user: currentUser + 1
+      })
     })
 }
 
 export function getCurrentId () {
-    let ref = Firebase.database().ref('/')
-    ref.once('value')
+  const ref = Firebase.database().ref('/')
+  ref.once('value')
     .then((snapshot) => {
-        console.log('current id: ', snapshot.val().user)
-        return snapshot.val().user
+      console.log('current id: ', snapshot.val().user)
+      return snapshot.val().user
     })
 }
 
-export function saveUserState (state) {
-    let ref = Firebase.database().ref('/share').push()
-    // ref.once('value')
-    // .then(snapshot => {
-    //     let userState = snapshot.val()
-    //     console.log(userState)
-    // })
-    ref.set({ state})
+export function saveUserState (shareData) {
+  const ref = Firebase.database().ref('/share')
+  return ref.push({ shareData }).key
 }
 
-// export default { incrementUser, getCurrentId }
+export function findShareKey (shareKey) {
+    const ref = Firebase.database().ref('/share')
+    const query = ref
+        .orderByKey()
+        .equalTo(shareKey)
+    query.on('value', (snap) => {
+        console.log('query result:', snap.val())
+    })
+}
