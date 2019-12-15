@@ -3,6 +3,8 @@ import { InputGroup, InputGroupAddon, Button, Input } from 'reactstrap'
 import { connect } from 'react-redux'
 import './Image.css'
 
+
+// TODO: IF THERE 
 class Image extends React.Component {
   constructor(props) {
     super(props)
@@ -12,6 +14,7 @@ class Image extends React.Component {
       isValid: true,
       placeholder: 'Enter image URL'
     }
+    console.log('Image props', props)
   }
 
   handleInputChange = (e) => {

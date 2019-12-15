@@ -48,13 +48,20 @@ constructor(props) {
   }
 
   handleShare = () => {
-    console.log(this.props.name)
-    console.log(this.props.modules)
+    // console.log(this.props.name)
+    // console.log(this.props.modules)
     const key = saveUserState({
       name: this.props.name,
       modules: this.props.modules
     })
-    console.log('handlshare result',key)
+    // console.log('handlshare result',key)
+    // console.log(`share this link: ${window.location.href + 'board/' + key}`)
+    const shareBtn = document.getElementById('shareBtn')
+    shareBtn.innerHTML = window.location.href + 'board/' + key 
+    // let shareLink = window.location.href + 'board/' + key 
+    // shareLink.select()
+    // document.execCommand("copy")
+
   }
 
 render () {
