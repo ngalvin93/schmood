@@ -57,7 +57,18 @@ constructor(props) {
     // console.log('handlshare result',key)
     // console.log(`share this link: ${window.location.href + 'board/' + key}`)
     const shareBtn = document.getElementById('shareBtn')
-    shareBtn.innerHTML = window.location.href + 'board/' + key 
+    var dummy = document.createElement("textarea");
+    // to avoid breaking orgain page when copying more words
+    // cant copy when adding below this code
+    // dummy.style.display = 'none'
+    document.body.appendChild(dummy);
+    //Be careful if you use texarea. setAttribute('value', value), which works with "input" does not work with "textarea". – Eduard
+    dummy.value = window.location.href + 'board/' + key;
+    dummy.select();
+    document.execCommand("copy");
+    document.body.removeChild(dummy);
+    shareBtn.innerHTML = 'Copied link to clipboard!' 
+
     // let shareLink = window.location.href + 'board/' + key 
     // shareLink.select()
     // document.execCommand("copy")
