@@ -7,17 +7,11 @@ import Board from './components/Board'
 import HowToUse from './components/HowToUse'
 import SharedBoard from './components/SharedBoard'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import { findShareKey } from './firebase-service'
 import './App.css'
 class App extends React.Component {
   constructor () {
     super()
     Firebase.initializeApp(config)
-  }
-
-  componentDidMount () {
-    console.log('did mount')
-    findShareKey('-Lw4P7x2_IHRo7coOsN_')
   }
 
   render () {

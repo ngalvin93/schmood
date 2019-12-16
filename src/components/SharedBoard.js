@@ -19,8 +19,8 @@ class SharedBoard extends React.Component {
       .then((result) => {
         const resultObj = result.child(shareKey).val()
         this.setState({ data: resultObj, isLoading: false })
-        console.log('modules array data:', this.state.data.modules)
-        console.log('name string data:', this.state.data.name)
+        // console.log('modules array data:', this.state.data.modules)
+        // console.log('name string data:', this.state.data.name)
       })
       .catch(error => console.error(error))
   }
@@ -32,13 +32,13 @@ class SharedBoard extends React.Component {
         <h1>LOADING</h1>
       )
     } else {
-    const MappedModules = this.state.data.modules.map(item => {
-        return <RenderModules {...item} />
-    })
+      const MappedModules = this.state.data.modules.map((item, idx) => {
+        return <RenderModules key={idx} {...item} />
+      })
       return (
         <div id='mood-box'>
-          <h3>{ this.state.data.name }</h3>
-          { MappedModules }
+          <h3>{this.state.data.name}</h3>
+          {MappedModules}
         </div>
       )
     }

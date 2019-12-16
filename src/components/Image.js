@@ -14,7 +14,6 @@ class Image extends React.Component {
       isValid: true,
       placeholder: 'Enter image URL'
     }
-    console.log('Image props', props)
   }
 
   handleInputChange = (e) => {
