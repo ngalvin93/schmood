@@ -16,7 +16,7 @@ function Header () {
   const toggle = () => setIsOpen(!isOpen)
   return (
     <div>
-      <Navbar color='dark' dark expand='md'>
+      <Navbar color='#FFFFFF' light expand='md'>
         <NavbarBrand href='/'>SCHMOOD</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>

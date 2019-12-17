@@ -10,7 +10,8 @@ constructor(props) {
   super(props)
   this.state = {
     input: '',
-    addItems: []
+    addItems: [],
+    isNamed: false
   }
 }
 
@@ -18,7 +19,7 @@ constructor(props) {
     if (e.key === 'Enter') {
       e.preventDefault()
       this.props.handleUpdateName(this.state.input)
-      this.setState({input: ''})
+      this.setState({input: '', isNamed: true})
     }
   }
 
@@ -28,7 +29,7 @@ constructor(props) {
 
   handleBtn = () => {
     this.props.handleUpdateName(this.state.input)
-    this.setState({input: ''})
+    this.setState({input: '', isNamed: true})
   }
 
   handleAddImage = () => {
@@ -72,15 +73,22 @@ render () {
     <Modules key={idx} {...item} />
   ))
 
-  return (
-      <Form id='mood-box'>
+
+    if (!this.state.isNamed) {
+      return (
+        <Form id='nameBoard'>
+          <InputGroup>
+            <Input placeholder ='Enter mood name' value={ this.state.input } onChange={ this.handleInputChangeEvent } onKeyDown={ this.handleInputKeyDown } />
+            <InputGroupAddon addonType='append'>
+              <Button onClick={ this.handleBtn }>Create</Button>
+            </InputGroupAddon>
+          </InputGroup>
+        </Form>
+      )
+    } else {
+      return (
+        <Form id='moodBox'>
         <h3>{ this.props.name }</h3>
-        <InputGroup>
-          <Input placeholder ='Enter mood name' value={ this.state.input } onChange={ this.handleInputChangeEvent } onKeyDown={ this.handleInputKeyDown } />
-          <InputGroupAddon addonType='append'>
-            <Button onClick={ this.handleBtn }>Create</Button>
-          </InputGroupAddon>
-        </InputGroup>
         <div>
           { this.moduleMap }
         </div>
@@ -94,7 +102,8 @@ render () {
         </div>
         <Button id='shareBtn' color='primary' block onClick={this.handleShare}>Share</Button>
       </Form>
-  )
+      )
+    }
 }}
 
 const mapStateToProps = (state) => state
