@@ -101,9 +101,9 @@ render () {
           { AddInput }
         </div>
         <div id='addBtnGroup'>
-          <Button className='addBtn' color="warning" onClick={ this.handleAddImage }>Add Image</Button>
-          <Button className='addBtn' color="success" onClick={ this.handleAddWrite }>Add Text</Button>
-          <Button className='addBtn' color="info" onClick={ this.handleAddLink }>Add Link</Button>
+          <Button className='addBtn' color="warning" onClick={ this.handleAddImage }>Image</Button>
+          <Button className='addBtn' color="success" onClick={ this.handleAddWrite }>Text</Button>
+          <Button className='addBtn' color="info" onClick={ this.handleAddLink }>Link</Button>
         </div>
         <Button id='shareBtn' color='primary' block onClick={this.handleShare}>Share</Button>
       </Form>

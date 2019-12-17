@@ -1,7 +1,7 @@
 import React from 'react'
 import { InputGroup, InputGroupAddon, Button, Input } from 'reactstrap'
 import { connect } from 'react-redux'
-import './Image.css'
+// import './Image.css'
 
 
 // TODO: IF THERE 

@@ -27,16 +27,7 @@ export function saveUserState (shareData) {
 }
 
 export function findShareKey (shareKey) {
-  // let returnObj
   const ref = Firebase.database().ref('/share')
   const query = ref.orderByKey().equalTo(shareKey)
   return query.once('value')
-  // .then(function (snap) {
-  //   return snap.child(shareKey).val()
-  // })
-  // .then(function (snap) {
-  //   console.log('~~~~~~~~', snap.child(shareKey).val())
-  //   returnObj = snap.child(shareKey).val()
-  // })
-  // return returnObj
 }

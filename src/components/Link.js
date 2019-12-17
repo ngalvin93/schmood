@@ -1,7 +1,8 @@
 import React from 'react'
 import { InputGroup, InputGroupAddon, Input, Button } from 'reactstrap'
 import { connect } from 'react-redux'
-import Microlink from '@microlink/react'
+//import Microlink from '@microlink/react'
+import { ReactTinyLink } from 'react-tiny-link'
 
 class Link extends React.Component {
   constructor (props) {
@@ -32,7 +33,14 @@ class Link extends React.Component {
   render () {
     if (this.state.link) {
       return (
-      <Microlink url={this.state.link} size='large' media='image'/>
+      // <Microlink url={this.state.link} size='large' media='image'/>
+      <ReactTinyLink
+        cardSize="small"
+        showGraphic="true"
+        maxLine="2"
+        minLine="1"
+        url={this.state.link}
+      />
       )
     } else {
       return (

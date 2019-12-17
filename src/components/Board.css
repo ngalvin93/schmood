@@ -11,6 +11,12 @@
     align-items: center;
 }
 
+#errorText {
+    margin: auto;
+    text-align: center;
+    height: 100px;
+}
+
 .addBtn {
     flex: 1;
     flex-grow: 1;
@@ -18,4 +24,18 @@
 
 .shareBtn {
     padding-bottom: 20px;
+}
+
+.image {
+    padding: 10px 0;
+}
+
+.imageInputGrp {
+    padding-bottom: 10px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
