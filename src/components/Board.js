@@ -48,31 +48,18 @@ constructor(props) {
   }
 
   handleShare = () => {
-    // console.log(this.props.name)
-    // console.log(this.props.modules)
     const key = saveUserState({
       name: this.props.name,
       modules: this.props.modules
     })
-    // console.log('handlshare result',key)
-    // console.log(`share this link: ${window.location.href + 'board/' + key}`)
     const shareBtn = document.getElementById('shareBtn')
-    var dummy = document.createElement("textarea");
-    // to avoid breaking orgain page when copying more words
-    // cant copy when adding below this code
-    // dummy.style.display = 'none'
-    document.body.appendChild(dummy);
-    //Be careful if you use texarea. setAttribute('value', value), which works with "input" does not work with "textarea". – Eduard
-    dummy.value = window.location.href + 'board/' + key;
-    dummy.select();
-    document.execCommand("copy");
-    document.body.removeChild(dummy);
+    var dummy = document.createElement("textarea")
+    document.body.appendChild(dummy)
+    dummy.value = window.location.href + 'board/' + key
+    dummy.select()
+    document.execCommand("copy")
+    document.body.removeChild(dummy)
     shareBtn.innerHTML = 'Copied link to clipboard!' 
-
-    // let shareLink = window.location.href + 'board/' + key 
-    // shareLink.select()
-    // document.execCommand("copy")
-
   }
 
 render () {
@@ -110,21 +97,14 @@ render () {
   )
 }}
 
-// maps the current state to the component via props
-const mapStateToProps = (state) => {
-  return state
-}
+const mapStateToProps = (state) => state
 
-// this gives the component access to dispatch actions via passing as props
 const mapDispatchToProps = (dispatch) => {
   return {
-    handleUpdateName: (newName) => {
-      dispatch({ type: 'UPDATE_NAME', name: newName })
-    }
+    handleUpdateName: (newName) => dispatch({ type: 'UPDATE_NAME', name: newName })
   }
 }
 
-// on state change, the board will refresh
 const ConnectedBoard = connect(
   mapStateToProps,
   mapDispatchToProps
