@@ -76,16 +76,18 @@ render () {
 
     if (!this.state.isNamed) {
       return (
-        <InputGroup>
-          <Input placeholder ='Enter mood name' value={ this.state.input } onChange={ this.handleInputChangeEvent } onKeyDown={ this.handleInputKeyDown } />
-          <InputGroupAddon addonType='append'>
-            <Button onClick={ this.handleBtn }>Create</Button>
-          </InputGroupAddon>
-        </InputGroup>
+        <Form id='nameBoard'>
+          <InputGroup>
+            <Input placeholder ='Enter mood name' value={ this.state.input } onChange={ this.handleInputChangeEvent } onKeyDown={ this.handleInputKeyDown } />
+            <InputGroupAddon addonType='append'>
+              <Button onClick={ this.handleBtn }>Create</Button>
+            </InputGroupAddon>
+          </InputGroup>
+        </Form>
       )
     } else {
       return (
-        <Form id='mood-box'>
+        <Form id='moodBox'>
         <h3>{ this.props.name }</h3>
         <div>
           { this.moduleMap }

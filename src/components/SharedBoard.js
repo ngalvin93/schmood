@@ -55,7 +55,7 @@ class SharedBoard extends React.Component {
         return <RenderModules key={idx} {...item} />
       })
       return (
-        <div id='mood-box'>
+        <div id='moodBox'>
           <h3>{this.state.data.name}</h3>
           {MappedModules}
         </div>

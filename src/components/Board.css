@@ -1,4 +1,10 @@
-#mood-box {
+#moodBox {
+    width: 50%;
+    margin: auto;
+    margin-bottom: 100px;
+}
+
+#nameBoard {
     width: 50%;
     margin: auto;
 }
@@ -22,9 +28,9 @@
     flex-grow: 1;
 }
 
-.shareBtn {
-    padding-bottom: 20px;
-}
+/* #shareBtn {
+    margin-bottom: 100px;
+} */
 
 .image {
     padding: 10px 0;
