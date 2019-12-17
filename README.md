@@ -24,3 +24,4 @@ Create front end based application with React that utilizes a state management t
 - Delete item from board
 - Edit item from board
 - Drag and drop to rearrange items on board
+- Validate URLs
