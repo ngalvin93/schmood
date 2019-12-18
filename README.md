@@ -5,9 +5,11 @@
 Share images, videos, words, and links to help get your ideas started quickly. Schmood is a simple to use, web-based application that allows users to keep the inspiration flowing.
 
 ## Overview
->npm install
-
->npm start
+```sh
+cd scmood
+npm install
+npm start
+```
 
 ## Technologies Used
 Reac, Redux, React-Redux, React Router, Create React App, Reactstrap, React Tiny Link, Firebase Realtime Database, Netlify
