@@ -6,7 +6,7 @@ Share images, videos, words, and links to help get your ideas started quickly. S
 
 ## Overview
 ```sh
-cd scmood
+cd schmood
 npm install
 npm start
 ```
