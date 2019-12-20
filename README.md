@@ -1,5 +1,6 @@
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/141e8c57-21f0-43dc-b7e9-454d8d51782e/deploy-status)](https://app.netlify.com/sites/determined-chandrasekhar-d6dccb/deploys)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 # Schmood
 Share images, videos, words, and links to help get your ideas started quickly. Schmood is a simple to use, web-based application that allows users to keep the inspiration flowing.
