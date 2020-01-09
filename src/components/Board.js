@@ -6,30 +6,28 @@ import { saveUserState } from '../firebase-service'
 import './Board.css'
 
 class Board extends React.Component {
-constructor(props) {
-  super(props)
-  this.state = {
+  
+  state = {
     input: '',
     addItems: [],
     isNamed: false
   }
-}
 
   handleInputKeyDown = (e) => {
     if (e.key === 'Enter') {
       e.preventDefault()
       this.props.handleUpdateName(this.state.input)
-      this.setState({input: '', isNamed: true})
+      this.setState({ input: '', isNamed: true })
     }
   }
 
   handleInputChangeEvent = (e) => {
-    this.setState({input: e.target.value})
+    this.setState({ input: e.target.value })
   }
 
   handleBtn = () => {
     this.props.handleUpdateName(this.state.input)
-    this.setState({input: '', isNamed: true})
+    this.setState({ input: '', isNamed: true })
   }
 
   handleAddImage = () => {
@@ -45,7 +43,7 @@ constructor(props) {
   }
 
   moduleMap = () => {
-    return this.props.modules.map((module, idx) => (<Modules key={idx} {...module} />))
+    return this.props.modules.map((module, idx) => <Modules key={idx} {...module} />)
   }
 
   handleShare = () => {
@@ -64,15 +62,10 @@ constructor(props) {
   }
 
 render () {
-// WHY DOES THE BELOW NOT WORK WHEN I REMOVE CONSOLE LOG????????
-  // const ModuleMap = this.props.modules.map((module, idx) => (
-  //   <Modules key={idx} {...module} />
-  // ))
 
   const AddInput = this.state.addItems.map((item, idx) => (
     <Modules key={idx} {...item} />
   ))
-
 
     if (!this.state.isNamed) {
       return (

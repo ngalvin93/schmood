@@ -1,23 +1,16 @@
 import React from 'react'
 import { InputGroup, InputGroupAddon, Button, Input } from 'reactstrap'
 import { connect } from 'react-redux'
-// import './Image.css'
-
-
-// TODO: IF THERE 
 class Image extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
+  
+  state = {
       input: '',
       link: '',
       isValid: true,
       placeholder: 'Enter image URL'
     }
-  }
 
   handleInputChange = (e) => {
-    // console.log('handleinputchange')
     this.setState({ 
       input: e.target.value,
       isValid: true,
@@ -55,7 +48,6 @@ class Image extends React.Component {
   }
 
   handleLoadImg = () => {
-    // console.log('handleloadimg')
     this.props.handleAddImage(this.state.link)
   }
 
@@ -64,12 +56,11 @@ class Image extends React.Component {
     if (this.state.link) {
       // IMG
       return (
-        <img className='image' src={this.state.link} onError={this.handleImgErr} onLoad={ this.handleLoadImg } width='100%' alt='blah'/>
+        <img className='image' src={ this.state.link } onError={ this.handleImgErr } onLoad={ this.handleLoadImg } width='100%' alt='img'/>
       )
     } else {
       if (this.state.isValid) {
       // DEFAULT IMG INPUT
-      // console.log('default img input')
       return (
         <InputGroup className='imageInputGrp'>
           <Input value={ this.state.input === '' ? this.state.placeholder : this.state.input } onChange={ this.handleInputChange } onKeyDown={ this.handleInputKeyDown } onFocus={ this.handleFocus } />
@@ -79,7 +70,6 @@ class Image extends React.Component {
         </InputGroup>
       )} else {
         // INVALID IMG URL INPUT
-        // console.log('invalid img input')
         return (
           <InputGroup className='imageInputGrp'>
             <Input invalid value={ this.state.input === '' ? this.state.placeholder : this.state.input } onChange={ this.handleInputChange } onKeyDown={ this.handleInputKeyDown } onFocus={ this.handleFocus } />

@@ -1,13 +1,15 @@
-// Your web app's Firebase configuration
-const config = {
-  apiKey: 'AIzaSyBaNX_JtewiG-ZCEvg6_cvmtrXiXJGpGiE',
-  authDomain: 'schmood-50880.firebaseapp.com',
-  databaseURL: 'https://schmood-50880.firebaseio.com',
-  projectId: 'schmood-50880',
-  storageBucket: 'schmood-50880.appspot.com',
-  messagingSenderId: '935707465210',
-  appId: '1:935707465210:web:9a5107ac27ea16df5e0043',
-  measurementId: 'G-JYKVJKXYB5'
+import dotenv from 'dotenv'
+dotenv.config()
+
+const firebaseConfig = {
+  apiKey: process.env.FIREBASE_APIKEY,
+  authDomain: process.env.FIREBASE_AUTHDOMAIN,
+  databaseURL: process.env.FIREBASE_DATABASEURL,
+  projectId: process.env.FIREBASE_PROJECTID,
+  storageBucket: process.env.FIREBASE_STORAGEBUCKET,
+  messagingSenderId: process.env.FIREBASE_MESSAGINGSENDERID,
+  appId: process.env.FIREBASE_APPID,
+  measurementId: process.env.FIREBASE_MEASUREMENTID
 }
 
-export default config
+export default firebaseConfig

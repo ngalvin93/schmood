@@ -1,33 +1,26 @@
 import * as Firebase from 'firebase/app'
 import 'firebase/database'
+import firebaseConfig from './config'
+import dotenv from 'dotenv'
 
-export function incrementUser () {
-  const ref = Firebase.database().ref('/')
-  ref.once('value')
-    .then(function (snapshot) {
-      const currentUser = snapshot.val().user
-      Firebase.database().ref('/').update({
-        user: currentUser + 1
-      })
-    })
-}
+dotenv.config()
+Firebase.initializeApp(firebaseConfig)
+
+// const Firebase.database().ref('/') = Firebase.database().ref('/')
+// const Firebase.database().ref('/share') = Firebase.database().ref('/share')
 
 export function getCurrentId () {
-  const ref = Firebase.database().ref('/')
-  ref.once('value')
+  Firebase.database().ref('/').once('value')
     .then((snapshot) => {
-      console.log('current id: ', snapshot.val().user)
       return snapshot.val().user
     })
 }
 
 export function saveUserState (shareData) {
-  const ref = Firebase.database().ref('/share')
-  return ref.push(shareData).key
+  return Firebase.database().ref('/share').push(shareData).key
 }
 
 export function findShareKey (shareKey) {
-  const ref = Firebase.database().ref('/share')
-  const query = ref.orderByKey().equalTo(shareKey)
+  const query = Firebase.database().ref('/share').orderByKey().equalTo(shareKey)
   return query.once('value')
 }
