@@ -4,7 +4,7 @@ import firebaseConfig from './config'
 import dotenv from 'dotenv'
 
 dotenv.config()
-Firebase.initializeApp(firebaseConfig)
+// Firebase.initializeApp(firebaseConfig)
 
 // const Firebase.database().ref('/') = Firebase.database().ref('/')
 // const Firebase.database().ref('/share') = Firebase.database().ref('/share')
