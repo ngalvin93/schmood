@@ -23,6 +23,18 @@
     height: 100px;
 }
 
+#input-container {
+    display: flex;
+    height: 100vh;
+}
+
+
+#root {
+    background-image: url(../img/patrick-fore-HVFYFns30-I-unsplash.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
 .addBtn {
     flex: 1;
     flex-grow: 1;

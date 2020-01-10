@@ -25,6 +25,18 @@ class Board extends React.Component {
     this.setState({ input: e.target.value })
   }
 
+  handleInputClick = (e) => {
+    if (!this.state.input) {
+      e.target.placeholder = ''
+    }
+  }
+
+  handleInputBlur = (e) => {
+    if (!this.state.input) {
+      e.target.placeholder = 'Enter mood name'
+    }
+  }
+
   handleBtn = () => {
     this.props.handleUpdateName(this.state.input)
     this.setState({ input: '', isNamed: true })
@@ -69,14 +81,16 @@ render () {
 
     if (!this.state.isNamed) {
       return (
-        <Form id='nameBoard'>
-          <InputGroup>
-            <Input placeholder ='Enter mood name' value={ this.state.input } onChange={ this.handleInputChangeEvent } onKeyDown={ this.handleInputKeyDown } />
-            <InputGroupAddon addonType='append'>
-              <Button onClick={ this.handleBtn }>Create</Button>
-            </InputGroupAddon>
-          </InputGroup>
-        </Form>
+        <div id='input-container'>
+          <Form id='nameBoard'>
+            <InputGroup>
+              <Input placeholder='Enter mood name' value={ this.state.input } onChange={ this.handleInputChangeEvent } onKeyDown={ this.handleInputKeyDown } onClick={ this.handleInputClick } onBlur={ this.handleInputBlur } />
+              <InputGroupAddon addonType='append'>
+                <Button onClick={ this.handleBtn }>Create</Button>
+              </InputGroupAddon>
+            </InputGroup>
+          </Form>
+        </div>
       )
     } else {
       return (

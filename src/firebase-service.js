@@ -1,6 +1,6 @@
 import * as Firebase from 'firebase/app'
 import 'firebase/database'
-import firebaseConfig from './config'
+// import firebaseConfig from './config'
 import dotenv from 'dotenv'
 
 dotenv.config()
