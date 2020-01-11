@@ -7,10 +7,14 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import * as Firebase from 'firebase/app'
 import 'firebase/database'
 import firebaseConfig from './config'
+import dotenv from 'dotenv'
+
 class App extends React.Component {
 
   componentDidMount () {
-    Firebase.initializeApp(firebaseConfig)
+    console.log('app did mount')
+    // dotenv.config()
+    // Firebase.initializeApp(firebaseConfig)
   }
 
   render () {

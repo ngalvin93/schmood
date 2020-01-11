@@ -1,10 +1,10 @@
 import * as Firebase from 'firebase/app'
 import 'firebase/database'
-// import firebaseConfig from './config'
+import firebaseConfig from './config'
 import dotenv from 'dotenv'
 
-dotenv.config()
-// Firebase.initializeApp(firebaseConfig)
+// dotenv.config()
+Firebase.initializeApp(firebaseConfig)
 
 // const Firebase.database().ref('/') = Firebase.database().ref('/')
 // const Firebase.database().ref('/share') = Firebase.database().ref('/share')

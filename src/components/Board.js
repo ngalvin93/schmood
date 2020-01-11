@@ -86,7 +86,7 @@ render () {
             <InputGroup>
               <Input placeholder='Enter mood name' value={ this.state.input } onChange={ this.handleInputChangeEvent } onKeyDown={ this.handleInputKeyDown } onClick={ this.handleInputClick } onBlur={ this.handleInputBlur } />
               <InputGroupAddon addonType='append'>
-                <Button onClick={ this.handleBtn }>Create</Button>
+                <Button id='createBtn' onClick={ this.handleBtn }>Create</Button>
               </InputGroupAddon>
             </InputGroup>
           </Form>

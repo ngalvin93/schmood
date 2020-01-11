@@ -35,6 +35,15 @@
     background-size: cover;
 }
 
+#createInput {
+    border: none;
+}
+
+#createBtn {
+    background-color: grey;
+    border: none;
+}
+
 .addBtn {
     flex: 1;
     flex-grow: 1;
