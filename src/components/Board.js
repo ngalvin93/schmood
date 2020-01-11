@@ -1,7 +1,7 @@
 import React from 'react'
 import Modules from './Modules'
 import { connect } from 'react-redux'
-import { InputGroup, InputGroupAddon, Button, Input, Form } from 'reactstrap'
+import { InputGroup, InputGroupAddon, Button, Input, Form, Container, Row, Col } from 'reactstrap'
 import { saveUserState } from '../firebase-service'
 import './Board.css'
 
@@ -94,21 +94,54 @@ render () {
       )
     } else {
       return (
+        // <Container>
+        //   <Row>
+        //     <Col>Row 1</Col>
+        //   </Row>
+        //   <Row>
+        //     <Col>Row 2.1</Col>
+        //     <Col>Row 2.2</Col>
+        //     <Col>Row 2.3</Col>
+        //     <Col>Row 2.4</Col>
+        //   </Row>
+        //   <Row>
+        //     <Col>Row 3</Col>
+        //   </Row>
+        //   <Row>
+        //     <Col>Row 4</Col>
+        //   </Row>
+        //   <Row>
+        //     <Col>{ this.props.name }</Col>
+        //   </Row>
+        //   <Row>
+        //     { this.moduleMap }
+        //   </Row>
+        //   <Row>
+        //     { AddInput }
+        //   </Row>
+        //   <Row>
+        //     <Col><Button className='addBtn' color="warning" onClick={ this.handleAddImage }>Image</Button></Col>
+        //     <Col><Button className='addBtn' color="success" onClick={ this.handleAddWrite }>Text</Button></Col>
+        //     <Col><Button className='addBtn' color="info" onClick={ this.handleAddLink }>Link</Button></Col>
+        //   </Row>
+        //   <Row>
+        //     <Col><Button color='primary' onClick={this.handleShare}>Share</Button></Col>
+        //   </Row>
         <Form id='moodBox'>
-        <h3>{ this.props.name }</h3>
-        <div>
-          { this.moduleMap }
-        </div>
-        <div>
-          { AddInput }
-        </div>
-        <div id='addBtnGroup'>
-          <Button className='addBtn' color="warning" onClick={ this.handleAddImage }>Image</Button>
-          <Button className='addBtn' color="success" onClick={ this.handleAddWrite }>Text</Button>
-          <Button className='addBtn' color="info" onClick={ this.handleAddLink }>Link</Button>
-        </div>
-        <Button id='shareBtn' color='primary' block onClick={this.handleShare}>Share</Button>
-      </Form>
+          <h3>{ this.props.name }</h3>
+          <div>
+            { this.moduleMap }
+          </div>
+          <div>
+            { AddInput }
+          </div>
+          <div id='addBtnGroup'>
+            <Button className='addBtn' color="warning" onClick={ this.handleAddImage }>Image</Button>
+            <Button className='addBtn' color="success" onClick={ this.handleAddWrite }>Text</Button>
+            <Button className='addBtn' color="info" onClick={ this.handleAddLink }>Link</Button>
+          </div>
+            <Button id='shareBtn' color='primary' block onClick={this.handleShare}>Share</Button>
+        </Form>
       )
     }
 }}
