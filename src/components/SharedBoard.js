@@ -6,17 +6,14 @@ import RenderModules from './RenderModules'
 import './Board.css'
 
 class SharedBoard extends React.Component {
-  constructor (props) {
-    super(props)
-    this.state = {
+  
+  state = {
       data: {},
       isLoading: true,
       error: null
     }
-  }
 
   componentWillMount () {
-    // pop off the request
     const shareKey = this.props.match.params.id
     findShareKey(shareKey)
       .then((result) => {
@@ -33,7 +30,6 @@ class SharedBoard extends React.Component {
         this.setState({ data: result, isLoading: false })
       })
       .catch((error) => {
-        // console.error(error)
         this.setState({ error, isLoading: false })
       })
   }

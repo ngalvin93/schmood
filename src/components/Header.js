@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import './Header.css'
-
 import {
   Collapse,
   Navbar,
@@ -16,7 +15,7 @@ function Header () {
   const toggle = () => setIsOpen(!isOpen)
   return (
     <div>
-      <Navbar color='#FFFFFF' light expand='md'>
+      <Navbar color='#FFFFFF' dark expand='md'>
         <NavbarBrand href='/'>SCHMOOD</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>

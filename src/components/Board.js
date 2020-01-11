@@ -6,30 +6,40 @@ import { saveUserState } from '../firebase-service'
 import './Board.css'
 
 class Board extends React.Component {
-constructor(props) {
-  super(props)
-  this.state = {
+  
+  state = {
     input: '',
     addItems: [],
     isNamed: false
   }
-}
 
   handleInputKeyDown = (e) => {
     if (e.key === 'Enter') {
       e.preventDefault()
       this.props.handleUpdateName(this.state.input)
-      this.setState({input: '', isNamed: true})
+      this.setState({ input: '', isNamed: true })
     }
   }
 
   handleInputChangeEvent = (e) => {
-    this.setState({input: e.target.value})
+    this.setState({ input: e.target.value })
+  }
+
+  handleInputClick = (e) => {
+    if (!this.state.input) {
+      e.target.placeholder = ''
+    }
+  }
+
+  handleInputBlur = (e) => {
+    if (!this.state.input) {
+      e.target.placeholder = 'Enter mood name'
+    }
   }
 
   handleBtn = () => {
     this.props.handleUpdateName(this.state.input)
-    this.setState({input: '', isNamed: true})
+    this.setState({ input: '', isNamed: true })
   }
 
   handleAddImage = () => {
@@ -45,7 +55,7 @@ constructor(props) {
   }
 
   moduleMap = () => {
-    return this.props.modules.map((module, idx) => (<Modules key={idx} {...module} />))
+    return this.props.modules.map((module, idx) => <Modules key={idx} {...module} />)
   }
 
   handleShare = () => {
@@ -64,26 +74,23 @@ constructor(props) {
   }
 
 render () {
-// WHY DOES THE BELOW NOT WORK WHEN I REMOVE CONSOLE LOG????????
-  // const ModuleMap = this.props.modules.map((module, idx) => (
-  //   <Modules key={idx} {...module} />
-  // ))
 
   const AddInput = this.state.addItems.map((item, idx) => (
     <Modules key={idx} {...item} />
   ))
 
-
     if (!this.state.isNamed) {
       return (
-        <Form id='nameBoard'>
-          <InputGroup>
-            <Input placeholder ='Enter mood name' value={ this.state.input } onChange={ this.handleInputChangeEvent } onKeyDown={ this.handleInputKeyDown } />
-            <InputGroupAddon addonType='append'>
-              <Button onClick={ this.handleBtn }>Create</Button>
-            </InputGroupAddon>
-          </InputGroup>
-        </Form>
+        <div id='input-container'>
+          <Form id='nameBoard'>
+            <InputGroup>
+              <Input placeholder='Enter mood name' value={ this.state.input } onChange={ this.handleInputChangeEvent } onKeyDown={ this.handleInputKeyDown } onClick={ this.handleInputClick } onBlur={ this.handleInputBlur } />
+              <InputGroupAddon addonType='append'>
+                <Button id='createBtn' onClick={ this.handleBtn }>Create</Button>
+              </InputGroupAddon>
+            </InputGroup>
+          </Form>
+        </div>
       )
     } else {
       return (

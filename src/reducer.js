@@ -34,22 +34,17 @@ const reducer = (state = initialState, action) => {
   switch (action.type) {
     case 'ADD_IMAGE':
       newState.modules.push(addImage(action.link))
-      // console.log('NEW GLOBAL STATE:', newState)
       return newState
     case 'ADD_TEXT':
       newState.modules.push(addText(action.text))
-      // console.log('NEW GLOBAL STATE:', newState)
       return newState
     case 'ADD_LINK':
       newState.modules.push(addLink(action.link))
-      // console.log('NEW GLOBAL STATE:', newState)
       return newState
     case 'UPDATE_NAME':
       newState.name = action.name
-      // console.log('NEW GLOBAL STATE:', newState)
       return newState
     default:
-      // console.log('DEFAULT GLOBAL STATE:', newState)
       return newState
   }
 }

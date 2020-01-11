@@ -23,6 +23,27 @@
     height: 100px;
 }
 
+#input-container {
+    display: flex;
+    height: 100vh;
+}
+
+
+#root {
+    background-image: url(../img/patrick-fore-HVFYFns30-I-unsplash.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+#createInput {
+    border: none;
+}
+
+#createBtn {
+    background-color: grey;
+    border: none;
+}
+
 .addBtn {
     flex: 1;
     flex-grow: 1;

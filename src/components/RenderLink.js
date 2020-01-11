@@ -1,5 +1,4 @@
 import React from 'react'
-// import Microlink from '@microlink/react'
 import { ReactTinyLink } from 'react-tiny-link'
 
 export default function RenderLink (props) {
@@ -9,7 +8,7 @@ export default function RenderLink (props) {
       showGraphic='true'
       maxLine='2'
       minLine='1'
-      url={props.link}
+      url={ props.link }
     />
   )
 }
