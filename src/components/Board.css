@@ -26,14 +26,17 @@
 #input-container {
     display: flex;
     height: 100vh;
-}
-
-
-#root {
     background-image: url(../img/patrick-fore-HVFYFns30-I-unsplash.jpg);
     background-position: center;
     background-size: cover;
 }
+
+
+/* #root {
+    background-image: url(../img/patrick-fore-HVFYFns30-I-unsplash.jpg);
+    background-position: center;
+    background-size: cover;
+} */
 
 #createInput {
     border: none;
@@ -45,8 +48,9 @@
 }
 
 .addBtn {
-    flex: 1;
-    flex-grow: 1;
+    /* flex: 1;
+    flex-grow: 1; */
+    width: 150px;
 }
 
 /* #shareBtn {
