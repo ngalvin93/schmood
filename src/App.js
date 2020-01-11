@@ -4,18 +4,7 @@ import Board from './components/Board'
 import HowToUse from './components/HowToUse'
 import SharedBoard from './components/SharedBoard'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import * as Firebase from 'firebase/app'
-import 'firebase/database'
-import firebaseConfig from './config'
-import dotenv from 'dotenv'
-
 class App extends React.Component {
-
-  componentDidMount () {
-    console.log('app did mount')
-    // dotenv.config()
-    // Firebase.initializeApp(firebaseConfig)
-  }
 
   render () {
     return (

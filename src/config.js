@@ -1,4 +1,4 @@
-require('dotenv').config()
+import {} from 'dotenv/config'
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_APIKEY,
@@ -10,7 +10,5 @@ const firebaseConfig = {
   appId: process.env.REACT_APP_FIREBASE_APPID,
   measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENTID
 }
-
-console.log('wwwwwww', process.env.FIREBASE_APIKEY)
 
 export default firebaseConfig
