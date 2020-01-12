@@ -13,7 +13,7 @@ export default class HowToUse extends Component {
       //   <a href='/'><Button color='primary'>Get started</Button></a>
       // </div>
 
-      <React.Fragment>
+      <div className='onboard'>
         <Container className='onboard-container' fluid='true'>
           <Row className='onboard-container-row d-flex'>
             <h3 className='onboard-container-text'>Give your mood board a name.</h3>
@@ -31,10 +31,10 @@ export default class HowToUse extends Component {
         </Container>
         <Container className='onboard-container' fluid='true'>
           <Row className='onboard-container-row d-flex'>
-            <h3 className='onboard-container-text'>Inspire your friends, colleauges and family.</h3>
+            <h3 className='onboard-container-text'>Inspire your friends, colleagues and family.</h3>
           </Row>
         </Container>
-      </React.Fragment>
+      </div>
     )
   }
 }
