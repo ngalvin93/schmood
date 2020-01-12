@@ -8,7 +8,7 @@ export default function RenderLink (props) {
       showGraphic='true'
       maxLine='2'
       minLine='1'
-      url={ props.link }
+      url={props.link}
     />
   )
 }
