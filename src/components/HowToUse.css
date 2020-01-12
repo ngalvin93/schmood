@@ -2,3 +2,20 @@
     text-align: center;
     margin: auto;
 }
+
+.onboard-container {
+    height: 400px;
+    margin: 10px 0;
+    background-color: rgb(243, 243, 243);
+}
+
+.onboard-container-row {
+    justify-content: center;
+    align-items: center;
+}
+
+.onboard-container-text {
+    text-align: center;
+    margin: auto;
+    flex: 1;
+}
