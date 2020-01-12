@@ -1,5 +1,5 @@
 import React from 'react'
-import { FormGroup, Input, Button } from 'reactstrap'
+import { FormGroup, Input, Button, Card, CardText } from 'reactstrap'
 import { connect } from 'react-redux'
 
 class Write extends React.Component {
@@ -29,7 +29,9 @@ class Write extends React.Component {
   render () {
     if (this.state.text) {
       return (
-        <h2>{ this.state.text }</h2>
+        <Card className='text-card'>
+          <CardText>{ this.state.text }</CardText>
+        </Card>
       )
     } else {
       return (
