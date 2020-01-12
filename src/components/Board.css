@@ -48,9 +48,8 @@
 }
 
 .addBtn {
-    /* flex: 1;
-    flex-grow: 1; */
-    width: 150px;
+    flex: 1;
+    flex-grow: 1;
 }
 
 /* #shareBtn {
