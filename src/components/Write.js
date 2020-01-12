@@ -29,7 +29,7 @@ class Write extends React.Component {
   render () {
     if (this.state.text) {
       return (
-        <Card className='text-card'>
+        <Card className='text-card shadow-sm rounded'>
           <CardText>{ this.state.text }</CardText>
         </Card>
       )
