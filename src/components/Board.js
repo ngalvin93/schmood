@@ -94,9 +94,9 @@ render () {
             { AddInput }
           </div>
           <ButtonGroup id='addBtnGroup'>
-            <Button className='addBtn' name='1' color="secondary" onClick={ this.handleAddModule }>Add Image</Button>
-            <Button className='addBtn' name='2' color="secondary" onClick={ this.handleAddModule }>Add Text</Button>
-            <Button className='addBtn' name='3' color="secondary" onClick={ this.handleAddModule }>Add Link</Button>
+            <Button className='addBtn' name='1' color="secondary" onClick={ this.handleAddModule } >Add Image</Button>
+            <Button className='addBtn' name='2' color="secondary" onClick={ this.handleAddModule } >Add Text</Button>
+            <Button className='addBtn' name='3' color="secondary" onClick={ this.handleAddModule } >Add Link</Button>
           </ButtonGroup>
             <Button id='shareBtn' color='primary' block onClick={this.handleShare}>Share Schmood</Button>
         </Form>
