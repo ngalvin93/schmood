@@ -13,8 +13,11 @@ npm start
 ```
 
 1. Start by naming your board
+![Name your board](https://github.com/ngalvin93/schmood/src/img/step1.gif)
 2. Collect images, text, and links from the internet and paste it to your board
+![Add to your mood board](https://github.com/ngalvin93/schmood/src/img/step2.gif)
 3. Once completed, share the board with the link
+![Share your board](https://github.com/ngalvin93/schmood/src/img/step3.gif)
 
 ## Technologies Used
 Reac, Redux, React-Redux, React Router, Create React App, Reactstrap, React Tiny Link, Firebase Realtime Database, Netlify
