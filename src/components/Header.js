@@ -10,12 +10,13 @@ import {
   NavLink
 } from 'reactstrap'
 
-function Header () {
+function Header (props) {
+  console.log(props)
   const [isOpen, setIsOpen] = useState(false)
   const toggle = () => setIsOpen(!isOpen)
   return (
     <div>
-      <Navbar color='#FFFFFF' light expand='md'>
+      <Navbar className='navbar fixed-top' dark expand='md'>
         <NavbarBrand href='/'>SCHMOOD</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
