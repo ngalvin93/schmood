@@ -1,7 +1,6 @@
-
 li {
     display: inline;
-    float: right;
+    /* float: right; */
 }
 
 nav {
@@ -11,4 +10,8 @@ nav {
 a {
     display: block;
     padding: 8px;
-  }
+}
+
+.navbar {
+    background-color: transparent;
+}

@@ -1,11 +1,13 @@
+/* THIS IS MOBILE CSS */
 #moodBox {
-    width: 50%;
+    width: 90%;
     margin: auto;
     margin-bottom: 100px;
 }
 
+/* nameBoard needs to be width: 100% when on mobile */
 #nameBoard {
-    width: 50%;
+    width: 90%;
     margin: auto;
 }
 
@@ -26,6 +28,7 @@
 #input-container {
     display: flex;
     height: 100vh;
+    width: 100vw;
     background-image: url(../img/patrick-fore-HVFYFns30-I-unsplash.jpg);
     background-position: center;
     background-size: cover;
@@ -73,4 +76,31 @@
 .text-card {
     padding: 10px;
     margin: 10px 0;
+}
+
+@media (min-width: 576px) {
+    #nameBoard {
+        width: 60%;
+    }
+}
+
+@media (min-width: 768px) {
+    #nameBoard {
+        width: 50%;
+    }
+}
+
+@media (min-width: 992px) {
+    #nameBoard {
+        width: 50%;
+    }
+}
+
+@media (min-width: 1200px) {
+    #nameBoard {
+        width: 50%;
+    }
+    #moodBox {
+        width: 50%;
+    }
 }

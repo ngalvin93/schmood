@@ -27,6 +27,7 @@ class SharedBoard extends React.Component {
       })
       .then((result) => {
         // set state
+        console.log('found this', result)
         this.setState({ data: result, isLoading: false })
       })
       .catch((error) => {
