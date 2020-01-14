@@ -12,6 +12,10 @@ npm install
 npm start
 ```
 
+1. Start by naming your board
+2. Collect images, text, and links from the internet and paste it to your board
+3. Once completed, share the board with the link
+
 ## Technologies Used
 Reac, Redux, React-Redux, React Router, Create React App, Reactstrap, React Tiny Link, Firebase Realtime Database, Netlify
 
