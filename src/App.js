@@ -9,7 +9,7 @@ class App extends React.Component {
   render () {
     return (
       <Router>
-        <Header name={ this.state } />
+        <Header name={ this } />
         <Switch>
           <Route path='/' exact component={Board} />
           <Route path='/how-to-use' component={HowToUse} />

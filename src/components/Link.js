@@ -45,7 +45,7 @@ class Link extends React.Component {
     } else {
       return (
         <InputGroup>
-          <Input onChange={ this.handleInputChange } onKeyDown={ this.handleInputKeyDown } />
+          <Input placeholder='Enter URL link' onChange={ this.handleInputChange } onKeyDown={ this.handleInputKeyDown } />
           <InputGroupAddon addonType='append'>
             <Button onClick={ this.handleBtnClick }>Add</Button>
           </InputGroupAddon>

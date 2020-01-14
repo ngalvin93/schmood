@@ -11,12 +11,22 @@ import {
 } from 'reactstrap'
 
 function Header (props) {
-  console.log(props)
+  console.log(props.name.props.name)
   const [isOpen, setIsOpen] = useState(false)
   const toggle = () => setIsOpen(!isOpen)
+  let navClass = ''
+  let navColor = ''
+  if (props.name.props.name) {
+    navClass = 'navbar fixed-top'
+    navColor = 'dark'
+  } else {
+    navClass = 'navbar'
+    navColor = 'light'
+  }
+
   return (
     <div>
-      <Navbar className='navbar fixed-top' dark expand='md'>
+      <Navbar className={ navClass } light expand='md'>
         <NavbarBrand href='/'>SCHMOOD</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
